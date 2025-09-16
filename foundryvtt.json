@@ -3,5 +3,24 @@
     "type": "system",
     "premium": false
   },
-  "includes": ["fonts/", "icons/", "json/", "LICENSE.txt", "README.md", "dnd5e-compiled.mjs.map", "templates/", "tokens/", "ui/"]
+  "includes": [
+    "fonts/",
+    "icons/",
+    "json/",
+    "LICENSE.txt",
+    "README.md",
+    "dnd5e-compiled.mjs.map",
+    "templates/",
+    "tokens/",
+    "ui/"
+  ],
+  "id": "wands",
+  "title": "Wizards & Shadows",
+  "version": "0.1.0",
+  "description": "Wizards & Shadows brings brooding arcana and political intrigue to Foundry Virtual Tabletop.",
+  "url": "https://github.com/wizards-and-shadows/wands",
+  "manifest": "https://raw.githubusercontent.com/wizards-and-shadows/wands/main/system.json",
+  "download": "https://github.com/wizards-and-shadows/wands/releases/download/v0.1.0/wands-0.1.0.zip",
+  "readme": "https://github.com/wizards-and-shadows/wands#readme",
+  "bugs": "https://github.com/wizards-and-shadows/wands/issues"
 }

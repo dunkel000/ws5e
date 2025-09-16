@@ -1,24 +1,24 @@
 {
-  "id": "dnd5e",
-  "title": "Dungeons & Dragons Fifth Edition",
-  "description": "A system for playing the fifth edition of the world's most popular role-playing game in the Foundry Virtual Tabletop environment.",
-  "version": "5.2.0",
+  "id": "wands",
+  "title": "Wizards & Shadows",
+  "description": "A dark fantasy toolkit for weaving tales of arcane intrigue and shifting alliances in Foundry Virtual Tabletop.",
+  "version": "0.1.0",
   "compatibility": {
     "minimum": "13.347",
     "verified": "13"
   },
-  "url": "https://github.com/foundryvtt/dnd5e/",
-  "manifest": "https://raw.githubusercontent.com/foundryvtt/dnd5e/master/system.json",
-  "download": "https://github.com/foundryvtt/dnd5e/releases/download/release-5.2.0/dnd5e-release-5.2.0.zip",
+  "url": "https://github.com/wizards-and-shadows/wands",
+  "manifest": "https://raw.githubusercontent.com/wizards-and-shadows/wands/main/system.json",
+  "download": "https://github.com/wizards-and-shadows/wands/releases/download/v0.1.0/wands-0.1.0.zip",
   "authors": [
     {
-      "name": "Atropos",
-      "url": "https://foundryvtt.com",
+      "name": "Wizards & Shadows Team",
+      "url": "https://github.com/wizards-and-shadows/wands",
       "flags": {}
     }
   ],
   "esmodules": [
-    "dnd5e.mjs"
+    "wands.mjs"
   ],
   "styles": [
     "dnd5e.css"
@@ -29,19 +29,35 @@
     },
     "Actor": {
       "character": {
-        "htmlFields": ["details.biography.value", "details.biography.public", "bastion.description"]
+        "htmlFields": [
+          "details.biography.value",
+          "details.biography.public",
+          "bastion.description"
+        ]
       },
       "encounter": {
-        "htmlFields": ["description.full", "description.summary"]
+        "htmlFields": [
+          "description.full",
+          "description.summary"
+        ]
       },
       "group": {
-        "htmlFields": ["description.full", "description.summary"]
+        "htmlFields": [
+          "description.full",
+          "description.summary"
+        ]
       },
       "npc": {
-        "htmlFields": ["details.biography.value", "details.biography.public"]
+        "htmlFields": [
+          "details.biography.value",
+          "details.biography.public"
+        ]
       },
       "vehicle": {
-        "htmlFields": ["details.biography.value", "details.biography.public"]
+        "htmlFields": [
+          "details.biography.value",
+          "details.biography.public"
+        ]
       }
     },
     "ChatMessage": {
@@ -52,79 +68,152 @@
     "Item": {
       "weapon": {
         "filePathFields": {
-          "activities.*.img": ["IMAGE"]
+          "activities.*.img": [
+            "IMAGE"
+          ]
         },
-        "htmlFields": ["description.value", "description.chat", "unidentified.description"]
+        "htmlFields": [
+          "description.value",
+          "description.chat",
+          "unidentified.description"
+        ]
       },
       "equipment": {
         "filePathFields": {
-          "activities.*.img": ["IMAGE"]
+          "activities.*.img": [
+            "IMAGE"
+          ]
         },
-        "htmlFields": ["description.value", "description.chat", "unidentified.description"]
+        "htmlFields": [
+          "description.value",
+          "description.chat",
+          "unidentified.description"
+        ]
       },
       "consumable": {
         "filePathFields": {
-          "activities.*.img": ["IMAGE"]
+          "activities.*.img": [
+            "IMAGE"
+          ]
         },
-        "htmlFields": ["description.value", "description.chat", "unidentified.description"]
+        "htmlFields": [
+          "description.value",
+          "description.chat",
+          "unidentified.description"
+        ]
       },
       "tool": {
         "filePathFields": {
-          "activities.*.img": ["IMAGE"]
+          "activities.*.img": [
+            "IMAGE"
+          ]
         },
-        "htmlFields": ["description.value", "description.chat", "unidentified.description"]
+        "htmlFields": [
+          "description.value",
+          "description.chat",
+          "unidentified.description"
+        ]
       },
       "loot": {
-        "htmlFields": ["description.value", "description.chat", "unidentified.description"]
+        "htmlFields": [
+          "description.value",
+          "description.chat",
+          "unidentified.description"
+        ]
       },
       "race": {
         "filePathFields": {
-          "advancement.*.icon": ["IMAGE"]
+          "advancement.*.icon": [
+            "IMAGE"
+          ]
         },
-        "htmlFields": ["description.value", "description.chat"]
+        "htmlFields": [
+          "description.value",
+          "description.chat"
+        ]
       },
       "background": {
         "filePathFields": {
-          "advancement.*.icon": ["IMAGE"]
+          "advancement.*.icon": [
+            "IMAGE"
+          ]
         },
-        "htmlFields": ["description.value", "description.chat"]
+        "htmlFields": [
+          "description.value",
+          "description.chat"
+        ]
       },
       "class": {
         "filePathFields": {
-          "advancement.*.icon": ["IMAGE"]
+          "advancement.*.icon": [
+            "IMAGE"
+          ]
         },
-        "htmlFields": ["description.value", "description.chat"]
+        "htmlFields": [
+          "description.value",
+          "description.chat"
+        ]
       },
       "subclass": {
         "filePathFields": {
-          "advancement.*.icon": ["IMAGE"]
+          "advancement.*.icon": [
+            "IMAGE"
+          ]
         },
-        "htmlFields": ["description.value", "description.chat"]
+        "htmlFields": [
+          "description.value",
+          "description.chat"
+        ]
       },
       "spell": {
         "filePathFields": {
-          "activities.*.img": ["IMAGE"]
+          "activities.*.img": [
+            "IMAGE"
+          ]
         },
-        "htmlFields": ["description.value", "description.chat"]
+        "htmlFields": [
+          "description.value",
+          "description.chat"
+        ]
       },
       "feat": {
         "filePathFields": {
-          "activities.*.img": ["IMAGE"],
-          "advancement.*.icon": ["IMAGE"]
+          "activities.*.img": [
+            "IMAGE"
+          ],
+          "advancement.*.icon": [
+            "IMAGE"
+          ]
         },
-        "htmlFields": ["description.value", "description.chat"]
+        "htmlFields": [
+          "description.value",
+          "description.chat"
+        ]
       },
       "container": {
-        "htmlFields": ["description.value", "description.chat", "unidentified.description"]
+        "htmlFields": [
+          "description.value",
+          "description.chat",
+          "unidentified.description"
+        ]
       },
       "backpack": {
-        "htmlFields": ["description.value", "description.chat", "unidentified.description"]
+        "htmlFields": [
+          "description.value",
+          "description.chat",
+          "unidentified.description"
+        ]
       },
       "facility": {
         "filePathFields": {
-          "activities.*.img": ["IMAGE"]
+          "activities.*.img": [
+            "IMAGE"
+          ]
         },
-        "htmlFields": ["description.value", "description.chat"]
+        "htmlFields": [
+          "description.value",
+          "description.chat"
+        ]
       }
     },
     "JournalEntryPage": {
@@ -139,337 +228,396 @@
       },
       "map": {},
       "rule": {
-        "htmlFields": ["tooltip"]
+        "htmlFields": [
+          "tooltip"
+        ]
       },
       "spells": {},
       "subclass": {
-        "htmlFields": ["details.value"]
+        "htmlFields": [
+          "details.value"
+        ]
       }
     },
     "RegionBehavior": {
-      "dnd5e.difficultTerrain": {},
-      "dnd5e.rotateArea": {}
+      "wands.difficultTerrain": {},
+      "wands.rotateArea": {}
     }
   },
   "packs": [
     {
-      "name": "heroes",
+      "name": "wands-heroes",
       "label": "Starter Heroes",
-      "system": "dnd5e",
-      "path": "packs/heroes",
+      "system": "wands",
+      "path": "packs/wands-heroes",
       "type": "Actor",
       "private": false,
       "flags": {
-        "dnd5e": {
+        "wands": {
           "sourceBook": "SRD 5.1",
-          "types": ["character"]
+          "types": [
+            "character"
+          ]
         }
       }
     },
     {
-      "name": "monsters",
+      "name": "wands-monsters",
       "label": "Monsters (SRD)",
-      "system": "dnd5e",
-      "path": "packs/monsters",
+      "system": "wands",
+      "path": "packs/wands-monsters",
       "type": "Actor",
       "private": false,
       "flags": {
-        "dnd5e": {
+        "wands": {
           "sourceBook": "SRD 5.1",
-          "types": ["npc"]
+          "types": [
+            "npc"
+          ]
         }
       }
     },
     {
-      "name": "items",
+      "name": "wands-items",
       "label": "Items (SRD)",
-      "system": "dnd5e",
-      "path": "packs/items",
+      "system": "wands",
+      "path": "packs/wands-items",
       "type": "Item",
       "private": false,
       "flags": {
-        "dnd5e": {
+        "wands": {
           "sourceBook": "SRD 5.1",
-          "types": ["weapon", "equipment", "consumable", "tool", "loot", "feat", "container"]
+          "types": [
+            "weapon",
+            "equipment",
+            "consumable",
+            "tool",
+            "loot",
+            "feat",
+            "container"
+          ]
         }
       }
     },
     {
-      "name": "tradegoods",
+      "name": "wands-tradegoods",
       "label": "Trade Goods (SRD)",
-      "system": "dnd5e",
-      "path": "packs/tradegoods",
+      "system": "wands",
+      "path": "packs/wands-tradegoods",
       "type": "Item",
       "private": false,
       "flags": {
-        "dnd5e": {
+        "wands": {
           "sourceBook": "SRD 5.1",
-          "types": ["loot"]
+          "types": [
+            "loot"
+          ]
         }
       }
     },
     {
-      "name": "spells",
+      "name": "wands-spells",
       "label": "Spells (SRD)",
-      "system": "dnd5e",
-      "path": "packs/spells",
+      "system": "wands",
+      "path": "packs/wands-spells",
       "type": "Item",
       "private": false,
       "flags": {
-        "dnd5e": {
+        "wands": {
           "sorting": "m",
           "sourceBook": "SRD 5.1",
-          "types": ["spell"]
+          "types": [
+            "spell"
+          ]
         }
       }
     },
     {
-      "name": "backgrounds",
+      "name": "wands-backgrounds",
       "label": "Backgrounds (SRD)",
-      "system": "dnd5e",
-      "path": "packs/backgrounds",
+      "system": "wands",
+      "path": "packs/wands-backgrounds",
       "type": "Item",
       "private": false,
       "flags": {
-        "dnd5e": {
+        "wands": {
           "sourceBook": "SRD 5.1",
-          "types": ["background", "feat"]
+          "types": [
+            "background",
+            "feat"
+          ]
         }
       }
     },
     {
-      "name": "classes",
+      "name": "wands-classes",
       "label": "Classes (SRD)",
-      "system": "dnd5e",
-      "path": "packs/classes",
+      "system": "wands",
+      "path": "packs/wands-classes",
       "type": "Item",
       "private": false,
       "flags": {
-        "dnd5e": {
+        "wands": {
           "sourceBook": "SRD 5.1",
-          "types": ["class"]
+          "types": [
+            "class"
+          ]
         }
       }
     },
     {
-      "name": "subclasses",
+      "name": "wands-subclasses",
       "label": "Subclasses (SRD)",
-      "system": "dnd5e",
-      "path": "packs/subclasses",
+      "system": "wands",
+      "path": "packs/wands-subclasses",
       "type": "Item",
       "private": false,
       "flags": {
-        "dnd5e": {
+        "wands": {
           "sourceBook": "SRD 5.1",
-          "types": ["subclass"]
+          "types": [
+            "subclass"
+          ]
         }
       }
     },
     {
-      "name": "classfeatures",
+      "name": "wands-classfeatures",
       "label": "Class & Subclass Features (SRD)",
-      "system": "dnd5e",
-      "path": "packs/classfeatures",
+      "system": "wands",
+      "path": "packs/wands-classfeatures",
       "type": "Item",
       "private": false,
       "flags": {
-        "dnd5e": {
+        "wands": {
           "sourceBook": "SRD 5.1",
-          "types": ["feat", "weapon"]
+          "types": [
+            "feat",
+            "weapon"
+          ]
         }
       }
     },
     {
-      "name": "races",
+      "name": "wands-races",
       "label": "Races (SRD)",
-      "system": "dnd5e",
-      "path": "packs/races",
+      "system": "wands",
+      "path": "packs/wands-races",
       "type": "Item",
       "private": false,
       "flags": {
-        "dnd5e": {
+        "wands": {
           "sourceBook": "SRD 5.1",
-          "types": ["race", "feat"]
+          "types": [
+            "race",
+            "feat"
+          ]
         }
       }
     },
     {
-      "name": "monsterfeatures",
+      "name": "wands-monsterfeatures",
       "label": "Monster Features (SRD)",
-      "system": "dnd5e",
-      "path": "packs/monsterfeatures",
+      "system": "wands",
+      "path": "packs/wands-monsterfeatures",
       "type": "Item",
       "private": false,
       "flags": {
-        "dnd5e": {
+        "wands": {
           "sourceBook": "SRD 5.1",
-          "types": ["feat", "weapon"]
+          "types": [
+            "feat",
+            "weapon"
+          ]
         }
       }
     },
     {
-      "name": "rules",
+      "name": "wands-rules",
       "label": "Rules (SRD)",
-      "system": "dnd5e",
-      "path": "packs/rules",
+      "system": "wands",
+      "path": "packs/wands-rules",
       "type": "JournalEntry",
       "private": false,
       "flags": {
-        "dnd5e": {
+        "wands": {
           "display": "table-of-contents"
         }
       }
     },
     {
-      "name": "tables",
+      "name": "wands-tables",
       "label": "Tables (SRD)",
-      "system": "dnd5e",
-      "path": "packs/tables",
+      "system": "wands",
+      "path": "packs/wands-tables",
       "type": "RollTable",
       "private": false,
       "flags": {}
     },
     {
-      "name": "content24",
+      "name": "wands-content24",
       "label": "Rules",
-      "path": "packs/content24",
+      "path": "packs/wands-content24",
       "type": "JournalEntry",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       },
-      "system": "dnd5e",
+      "system": "wands",
       "flags": {
         "display": "table-of-contents"
       }
     },
     {
-      "name": "classes24",
+      "name": "wands-classes24",
       "label": "Character Classes",
-      "path": "packs/classes24",
+      "path": "packs/wands-classes24",
       "type": "Item",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       },
-      "system": "dnd5e",
+      "system": "wands",
       "flags": {
-        "dnd5e": {
+        "wands": {
           "sourceBook": "SRD 5.2",
-          "types": ["class", "subclass", "feat"]
+          "types": [
+            "class",
+            "subclass",
+            "feat"
+          ]
         }
       }
     },
     {
-      "name": "origins24",
+      "name": "wands-origins24",
       "label": "Character Origins",
-      "path": "packs/origins24",
+      "path": "packs/wands-origins24",
       "type": "Item",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       },
-      "system": "dnd5e",
+      "system": "wands",
       "flags": {
-        "dnd5e": {
+        "wands": {
           "sourceBook": "SRD 5.2",
-          "types": ["race", "background", "feat"]
+          "types": [
+            "race",
+            "background",
+            "feat"
+          ]
         }
       }
     },
     {
-      "name": "feats24",
+      "name": "wands-feats24",
       "label": "Feats",
-      "path": "packs/feats24",
+      "path": "packs/wands-feats24",
       "type": "Item",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       },
-      "system": "dnd5e",
+      "system": "wands",
       "flags": {
-        "dnd5e": {
+        "wands": {
           "sourceBook": "SRD 5.2",
-          "types": ["feat"]
+          "types": [
+            "feat"
+          ]
         }
       }
     },
     {
-      "name": "spells24",
+      "name": "wands-spells24",
       "label": "Spells",
-      "path": "packs/spells24",
+      "path": "packs/wands-spells24",
       "type": "Item",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       },
-      "system": "dnd5e",
+      "system": "wands",
       "flags": {
-        "dnd5e": {
+        "wands": {
           "sorting": "m",
           "sourceBook": "SRD 5.2",
-          "types": ["spell"]
+          "types": [
+            "spell"
+          ]
         }
       }
     },
     {
-      "name": "equipment24",
+      "name": "wands-equipment24",
       "label": "Equipment",
-      "path": "packs/equipment24",
+      "path": "packs/wands-equipment24",
       "type": "Item",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       },
-      "system": "dnd5e",
+      "system": "wands",
       "flags": {
-        "dnd5e": {
+        "wands": {
           "sourceBook": "SRD 5.2",
-          "types": ["weapon", "equipment", "consumable", "tool", "loot", "feat", "container"]
+          "types": [
+            "weapon",
+            "equipment",
+            "consumable",
+            "tool",
+            "loot",
+            "feat",
+            "container"
+          ]
         }
       }
     },
     {
-      "name": "tables24",
+      "name": "wands-tables24",
       "label": "Roll Tables",
-      "path": "packs/tables24",
+      "path": "packs/wands-tables24",
       "type": "RollTable",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       },
-      "system": "dnd5e"
+      "system": "wands"
     },
     {
-      "name": "actors24",
+      "name": "wands-actors24",
       "label": "Actors",
-      "path": "packs/actors24",
+      "path": "packs/wands-actors24",
       "type": "Actor",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       },
-      "system": "dnd5e",
+      "system": "wands",
       "flags": {
-        "dnd5e": {
+        "wands": {
           "sorting": "m",
           "sourceBook": "SRD 5.2"
         }
       }
     },
     {
-      "name": "monsterfeatures24",
+      "name": "wands-monsterfeatures24",
       "label": "Monster Features",
-      "path": "packs/monsterfeatures24",
+      "path": "packs/wands-monsterfeatures24",
       "type": "Item",
       "ownership": {
         "ASSISTANT": "OWNER"
       },
-      "system": "dnd5e",
+      "system": "wands",
       "flags": {
-        "dnd5e": {
+        "wands": {
           "sourceBook": "SRD 5.2",
-          "types": ["feat", "weapon"]
+          "types": [
+            "feat",
+            "weapon"
+          ]
         }
       }
     }
@@ -480,15 +628,15 @@
       "color": "#cd2c1e",
       "sorting": "m",
       "packs": [
-        "content24",
-        "classes24",
-        "origins24",
-        "feats24",
-        "spells24",
-        "tables24",
-        "actors24",
-        "equipment24",
-        "monsterfeatures24"
+        "wands-content24",
+        "wands-classes24",
+        "wands-origins24",
+        "wands-feats24",
+        "wands-spells24",
+        "wands-tables24",
+        "wands-actors24",
+        "wands-equipment24",
+        "wands-monsterfeatures24"
       ]
     },
     {
@@ -496,9 +644,9 @@
       "sorting": "m",
       "color": "#cd2c1e",
       "packs": [
-        "rules",
-        "tables",
-        "heroes"
+        "wands-rules",
+        "wands-tables",
+        "wands-heroes"
       ],
       "folders": [
         {
@@ -506,11 +654,11 @@
           "sorting": "m",
           "color": "#b72c1f",
           "packs": [
-            "classes",
-            "subclasses",
-            "classfeatures",
-            "backgrounds",
-            "races"
+            "wands-classes",
+            "wands-subclasses",
+            "wands-classfeatures",
+            "wands-backgrounds",
+            "wands-races"
           ]
         },
         {
@@ -518,9 +666,9 @@
           "sorting": "m",
           "color": "#941919 ",
           "packs": [
-            "items",
-            "spells",
-            "tradegoods"
+            "wands-items",
+            "wands-spells",
+            "wands-tradegoods"
           ]
         },
         {
@@ -528,8 +676,8 @@
           "sorting": "m",
           "color": "#7d160c",
           "packs": [
-            "monsters",
-            "monsterfeatures"
+            "wands-monsters",
+            "wands-monsterfeatures"
           ]
         }
       ]
@@ -551,8 +699,8 @@
     },
     {
       "type": "setup",
-      "url": "systems/dnd5e/ui/official/dnd5e-repo.jpg",
-      "thumbnail": "systems/dnd5e/ui/official/dnd5e-thumbnail.jpg"
+      "url": "systems/wands/ui/official/dnd5e-repo.jpg",
+      "thumbnail": "systems/wands/ui/official/dnd5e-thumbnail.jpg"
     }
   ],
   "socket": true,
@@ -561,15 +709,15 @@
     "units": "ft"
   },
   "primaryTokenAttribute": "attributes.hp",
-  "background": "systems/dnd5e/ui/official/dnd5e-background.webp",
+  "background": "systems/wands/ui/official/dnd5e-background.webp",
   "flags": {
     "compendiumArtMappings": {
-      "dnd5e": {
-        "mapping": "systems/dnd5e/json/fa-token-mapping.json",
+      "wands": {
+        "mapping": "systems/wands/json/fa-token-mapping.json",
         "credit": "<em>Token artwork by <a href=\"https://www.forgotten-adventures.net/\" target=\"_blank\" rel=\"noopener\">Forgotten Adventures</a>.</em>"
       }
     },
-    "dnd5e": {
+    "wands": {
       "sourceBooks": {
         "SRD 5.1": "SOURCE.BOOK.SRD51",
         "SRD 5.2": "SOURCE.BOOK.SRD52"
@@ -578,8 +726,16 @@
     "needsMigrationVersion": "5.1.0",
     "compatibleMigrationVersion": "0.8",
     "hotReload": {
-      "extensions": ["css", "hbs", "json"],
-      "paths": ["dnd5e.css", "templates", "lang"]
+      "extensions": [
+        "css",
+        "hbs",
+        "json"
+      ],
+      "paths": [
+        "dnd5e.css",
+        "templates",
+        "lang"
+      ]
     }
   }
 }
