@@ -8,7 +8,7 @@
  */
 
 // Import Configuration
-import DND5E from "./module/config.mjs";
+import WANDS from "./module/config.mjs";
 import {
   applyLegacyRules, registerDeferredSettings, registerSystemKeybindings, registerSystemSettings
 } from "./module/settings.mjs";
@@ -36,7 +36,7 @@ import DragDrop5e from "./module/drag-drop.mjs";
 const SYSTEM_NAMESPACE = {
   applications,
   canvas,
-  config: DND5E,
+  config: WANDS,
   dataModels,
   dice,
   documents,
@@ -58,10 +58,10 @@ Hooks.once("init", function() {
   const namespace = Object.assign(game.system, globalThis.wands);
   globalThis.wands = game.wands = namespace;
   globalThis.dnd5e = game.dnd5e = namespace;
-  utils.log(`Initializing the Wizards & Shadows Game System - Version ${namespace.version}\n${DND5E.ASCII}`);
+  utils.log(`Initializing the Wizards & Shadows Game System - Version ${namespace.version}\n${WANDS.ASCII}`);
 
   // Record Configuration Values
-  CONFIG.WANDS = DND5E;
+  CONFIG.WANDS = WANDS;
   CONFIG.DND5E = CONFIG.WANDS;
   CONFIG.ActiveEffect.documentClass = documents.ActiveEffect5e;
   CONFIG.ActiveEffect.legacyTransferral = false;
@@ -109,14 +109,14 @@ Hooks.once("init", function() {
   namespace.tooltips = new Tooltips5e();
 
   // Remove honor & sanity from configuration if they aren't enabled
-  if ( !game.settings.get("dnd5e", "honorScore") ) delete DND5E.abilities.hon;
-  if ( !game.settings.get("dnd5e", "sanityScore") ) delete DND5E.abilities.san;
+  if ( !game.settings.get("dnd5e", "honorScore") ) delete WANDS.abilities.hon;
+  if ( !game.settings.get("dnd5e", "sanityScore") ) delete WANDS.abilities.san;
 
   // Legacy rules.
   if ( game.settings.get("dnd5e", "rulesVersion") === "legacy" ) applyLegacyRules();
 
   // Register system
-  DND5E.SPELL_LISTS.forEach(uuid => namespace.registry.spellLists.register(uuid));
+  WANDS.SPELL_LISTS.forEach(uuid => namespace.registry.spellLists.register(uuid));
 
   // Register module data from manifests
   registerModuleData();
@@ -252,8 +252,8 @@ function _configureTrackableAttributes() {
   const common = {
     bar: [],
     value: [
-      ...Object.keys(DND5E.abilities).map(ability => `abilities.${ability}.value`),
-      ...Object.keys(DND5E.movementTypes).map(movement => `attributes.movement.${movement}`),
+      ...Object.keys(WANDS.abilities).map(ability => `abilities.${ability}.value`),
+      ...Object.keys(WANDS.movementTypes).map(movement => `attributes.movement.${movement}`),
       "attributes.ac.value", "attributes.init.total"
     ]
   };
@@ -266,8 +266,8 @@ function _configureTrackableAttributes() {
     ],
     value: [
       ...common.value,
-      ...Object.keys(DND5E.skills).map(skill => `skills.${skill}.passive`),
-      ...Object.keys(DND5E.senses).map(sense => `attributes.senses.${sense}`),
+      ...Object.keys(WANDS.skills).map(skill => `skills.${skill}.passive`),
+      ...Object.keys(WANDS.senses).map(sense => `attributes.senses.${sense}`),
       "attributes.spell.attack", "attributes.spell.dc"
     ]
   };
@@ -300,8 +300,8 @@ function _configureTrackableAttributes() {
  * @internal
  */
 function _trackedSpellAttributes() {
-  return Object.entries(DND5E.spellcasting).reduce((acc, [k, v]) => {
-    if ( v.slots ) Array.fromRange(Object.keys(DND5E.spellLevels).length - 1, 1).forEach(l => {
+  return Object.entries(WANDS.spellcasting).reduce((acc, [k, v]) => {
+    if ( v.slots ) Array.fromRange(Object.keys(WANDS.spellLevels).length - 1, 1).forEach(l => {
       acc.add(`spells.${v.getSpellSlotKey(l)}`);
     });
     return acc;
@@ -316,13 +316,13 @@ function _trackedSpellAttributes() {
  */
 function _configureConsumableAttributes() {
   CONFIG.WANDS.consumableResources = [
-    ...Object.keys(DND5E.abilities).map(ability => `abilities.${ability}.value`),
+    ...Object.keys(WANDS.abilities).map(ability => `abilities.${ability}.value`),
     "attributes.ac.flat",
     "attributes.hp.value",
     "attributes.exhaustion",
-    ...Object.keys(DND5E.senses).map(sense => `attributes.senses.${sense}`),
-    ...Object.keys(DND5E.movementTypes).map(type => `attributes.movement.${type}`),
-    ...Object.keys(DND5E.currencies).map(denom => `currency.${denom}`),
+    ...Object.keys(WANDS.senses).map(sense => `attributes.senses.${sense}`),
+    ...Object.keys(WANDS.movementTypes).map(type => `attributes.movement.${type}`),
+    ...Object.keys(WANDS.currencies).map(denom => `currency.${denom}`),
     "details.xp.value",
     "resources.primary.value", "resources.secondary.value", "resources.tertiary.value",
     "resources.legact.value", "resources.legres.value",
@@ -395,7 +395,7 @@ function _configureStatusEffects() {
     }
     effects.push(data);
     if ( special ) CONFIG.specialStatusEffects[special] = data.id;
-    if ( data.neverBlockMovement ) DND5E.neverBlockStatuses.add(data.id);
+    if ( data.neverBlockMovement ) WANDS.neverBlockStatuses.add(data.id);
   };
   CONFIG.statusEffects = Object.entries(CONFIG.WANDS.statusEffects).reduce((arr, [id, data]) => {
     const original = CONFIG.statusEffects.find(s => s.id === id);
@@ -675,5 +675,5 @@ export {
   migrations,
   registry,
   utils,
-  DND5E
+  WANDS
 };

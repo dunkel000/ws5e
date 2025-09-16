@@ -12,16 +12,14 @@ import MappingField from "./data/fields/mapping-field.mjs";
  */
 
 // Namespace Configuration Values
-const DND5E = {};
+const WANDS = {};
 
 // ASCII Artwork
-DND5E.ASCII = `_______________________________
-______      ______ _____ _____
-|  _  \\___  |  _  \\  ___|  ___|
-| | | ( _ ) | | | |___ \\| |__
-| | | / _ \\/\\ | | |   \\ \\  __|
-| |/ / (_>  < |/ //\\__/ / |___
-|___/ \\___/\\/___/ \\____/\\____/
+WANDS.ASCII = `__        __          _      ____  _                 _
+\ \      / /__  _ __ | |__  / ___|| |__   __ _ _ __| |
+ \ \ /\ / / _ \| '_ \| '_ \ \___ \| '_ \ / _` | '__| |
+  \ V  V / (_) | | | | | | | ___) | | | | (_| | |  | |
+   \_/\_/ \___/|_| |_|_| |_|____/|_| |_|\__,_|_|  |_|
 _______________________________`;
 
 /**
@@ -43,7 +41,7 @@ _______________________________`;
  * The set of Ability Scores used within the system.
  * @enum {AbilityConfiguration}
  */
-DND5E.abilities = {
+WANDS.abilities = {
   str: {
     label: "DND5E.AbilityStr",
     abbreviation: "DND5E.AbilityStrAbbr",
@@ -120,7 +118,7 @@ preLocalize("abilities", { keys: ["label", "abbreviation"] });
  * saving throws to maintain concentration.
  * @enum {string}
  */
-DND5E.defaultAbilities = {
+WANDS.defaultAbilities = {
   meleeAttack: "str",
   rangedAttack: "dex",
   initiative: "dex",
@@ -148,7 +146,7 @@ DND5E.defaultAbilities = {
  * The set of skill which can be trained with their default ability scores.
  * @enum {SkillConfiguration}
  */
-DND5E.skills = {
+WANDS.skills = {
   acr: {
     label: "DND5E.SkillAcr",
     ability: "dex",
@@ -296,7 +294,7 @@ preLocalize("skills", { key: "label", sort: true });
  * advantage or disadvantage.
  * @type {{ base: number, modifier: number }}
  */
-DND5E.skillPassive = {
+WANDS.skillPassive = {
   base: 10,
   modifier: 5
 };
@@ -307,7 +305,7 @@ DND5E.skillPassive = {
  * Character alignment options.
  * @enum {string}
  */
-DND5E.alignments = {
+WANDS.alignments = {
   lg: "DND5E.AlignmentLG",
   ng: "DND5E.AlignmentNG",
   cg: "DND5E.AlignmentCG",
@@ -326,7 +324,7 @@ preLocalize("alignments");
  * An enumeration of item attunement types.
  * @enum {string}
  */
-DND5E.attunementTypes = {
+WANDS.attunementTypes = {
   required: "DND5E.AttunementRequired",
   optional: "DND5E.AttunementOptional"
 };
@@ -340,7 +338,7 @@ preLocalize("attunementTypes");
  * The set of types which a weapon item can take.
  * @enum {string}
  */
-DND5E.weaponTypes = {
+WANDS.weaponTypes = {
   simpleM: "DND5E.WeaponSimpleM",
   simpleR: "DND5E.WeaponSimpleR",
   martialM: "DND5E.WeaponMartialM",
@@ -357,7 +355,7 @@ preLocalize("weaponTypes");
  * General weapon categories.
  * @enum {string}
  */
-DND5E.weaponProficiencies = {
+WANDS.weaponProficiencies = {
   sim: "DND5E.WeaponSimpleProficiency",
   mar: "DND5E.WeaponMartialProficiency"
 };
@@ -375,7 +373,7 @@ preLocalize("weaponProficiencies");
  * Weapon masteries.
  * @enum {WeaponMasterConfiguration}
  */
-DND5E.weaponMasteries = {
+WANDS.weaponMasteries = {
   cleave: {
     label: "DND5E.WEAPON.Mastery.Cleave",
     reference: "Compendium.dnd5e.content24.JournalEntry.phbAppendixDRule.JournalEntryPage.ULDpodOdTxTTiNEx"
@@ -418,7 +416,7 @@ preLocalize("weaponMasteries", { key: "label", sort: true });
  * is used to determine if character has proficiency when adding an item.
  * @enum {(boolean|string)}
  */
-DND5E.weaponProficienciesMap = {
+WANDS.weaponProficienciesMap = {
   simpleM: "sim",
   simpleR: "sim",
   martialM: "mar",
@@ -432,7 +430,7 @@ DND5E.weaponProficienciesMap = {
  * of the "weapon" classification.
  * @enum {string}
  */
-DND5E.weaponClassificationMap = {};
+WANDS.weaponClassificationMap = {};
 
 /* -------------------------------------------- */
 
@@ -440,7 +438,7 @@ DND5E.weaponClassificationMap = {};
  * A mapping between `DND5E.weaponTypes` and `DND5E.attackTypes`.
  * @enum {string}
  */
-DND5E.weaponTypeMap = {
+WANDS.weaponTypeMap = {
   simpleM: "melee",
   simpleR: "ranged",
   martialM: "melee",
@@ -455,7 +453,7 @@ DND5E.weaponTypeMap = {
  * starting equipment provided by classes and backgrounds.
  * @enum {string}
  */
-DND5E.weaponIds = {
+WANDS.weaponIds = {
   battleaxe: "Compendium.dnd5e.equipment24.Item.phbwepBattleaxe0",
   blowgun: "Compendium.dnd5e.equipment24.Item.phbwepBlowgun000",
   club: "Compendium.dnd5e.equipment24.Item.phbwepClub000000",
@@ -502,7 +500,7 @@ DND5E.weaponIds = {
  * The basic ammunition types.
  * @enum {string}
  */
-DND5E.ammoIds = {
+WANDS.ammoIds = {
   arrow: "Compendium.dnd5e.equipment24.Item.phbamoArrows0000",
   blowgunNeedle: "Compendium.dnd5e.equipment24.Item.phbamoNeedles000",
   crossbowBolt: "Compendium.dnd5e.equipment24.Item.phbamoBolts00000",
@@ -544,7 +542,7 @@ DND5E.ammoIds = {
  * Configuration data for bastion facilities.
  * @type {FacilityConfiguration}
  */
-DND5E.facilities = {
+WANDS.facilities = {
   advancement: {
     basic: { 5: 2 },
     special: { 5: 2, 9: 4, 13: 5, 17: 6 }
@@ -681,7 +679,7 @@ preLocalize("facilities.types.special.subtypes", { sort: true });
  *
  * @enum {string}
  */
-DND5E.toolTypes = {
+WANDS.toolTypes = {
   art: "DND5E.ToolArtisans",
   game: "DND5E.ToolGamingSet",
   music: "DND5E.ToolMusicalInstrument"
@@ -693,8 +691,8 @@ preLocalize("toolTypes", { sort: true });
  *
  * @enum {string}
  */
-DND5E.toolProficiencies = {
-  ...DND5E.toolTypes,
+WANDS.toolProficiencies = {
+  ...WANDS.toolTypes,
   vehicle: "DND5E.ToolVehicle"
 };
 preLocalize("toolProficiencies", { sort: true });
@@ -709,7 +707,7 @@ preLocalize("toolProficiencies", { sort: true });
  * Configuration data for tools.
  * @enum {ToolConfiguration}
  */
-DND5E.tools = {
+WANDS.tools = {
   alchemist: {
     ability: "int",
     id: "Compendium.dnd5e.equipment24.Item.phbtulAlchemists"
@@ -861,7 +859,7 @@ DND5E.tools = {
  * starting equipment provided by classes and backgrounds.
  * @enum {string}
  */
-DND5E.toolIds = new Proxy(DND5E.tools, {
+WANDS.toolIds = new Proxy(WANDS.tools, {
   get(target, prop) {
     return target[prop]?.id ?? target[prop];
   }
@@ -886,7 +884,7 @@ DND5E.toolIds = new Proxy(DND5E.tools, {
  * Configuration for time units available to the system.
  * @enum {TimeUnitConfiguration}
  */
-DND5E.timeUnits = {
+WANDS.timeUnits = {
   turn: {
     label: "DND5E.UNITS.TIME.Turn.Label",
     counted: "DND5E.UNITS.TIME.Turn.Counted",
@@ -938,7 +936,7 @@ preLocalize("timeUnits", { key: "label" });
  * Time periods that accept a numeric value.
  * @enum {string}
  */
-DND5E.scalarTimePeriods = new Proxy(DND5E.timeUnits, {
+WANDS.scalarTimePeriods = new Proxy(WANDS.timeUnits, {
   get(target, prop) {
     return target[prop]?.label;
   },
@@ -956,7 +954,7 @@ DND5E.scalarTimePeriods = new Proxy(DND5E.timeUnits, {
  * Time periods for spells that don't have a defined ending.
  * @enum {string}
  */
-DND5E.permanentTimePeriods = {
+WANDS.permanentTimePeriods = {
   disp: "DND5E.TimeDisp",
   dstr: "DND5E.TimeDispTrig",
   perm: "DND5E.TimePerm"
@@ -969,7 +967,7 @@ preLocalize("permanentTimePeriods");
  * Time periods that don't accept a numeric value.
  * @enum {string}
  */
-DND5E.specialTimePeriods = {
+WANDS.specialTimePeriods = {
   inst: "DND5E.TimeInst",
   spec: "DND5E.Special"
 };
@@ -981,10 +979,10 @@ preLocalize("specialTimePeriods");
  * The various lengths of time over which effects can occur.
  * @enum {string}
  */
-DND5E.timePeriods = {
-  ...DND5E.specialTimePeriods,
-  ...DND5E.permanentTimePeriods,
-  ...DND5E.scalarTimePeriods
+WANDS.timePeriods = {
+  ...WANDS.specialTimePeriods,
+  ...WANDS.permanentTimePeriods,
+  ...WANDS.scalarTimePeriods
 };
 preLocalize("timePeriods");
 
@@ -994,23 +992,23 @@ preLocalize("timePeriods");
  * Ways in which to activate an item that cannot be labeled with a cost.
  * @enum {string}
  */
-DND5E.staticAbilityActivationTypes = {
+WANDS.staticAbilityActivationTypes = {
   none: "DND5E.NoneActionLabel",
-  special: DND5E.timePeriods.spec
+  special: WANDS.timePeriods.spec
 };
 
 /**
  * Various ways in which an item or ability can be activated.
  * @enum {string}
  */
-DND5E.abilityActivationTypes = {
-  ...DND5E.staticAbilityActivationTypes,
+WANDS.abilityActivationTypes = {
+  ...WANDS.staticAbilityActivationTypes,
   action: "DND5E.Action",
   bonus: "DND5E.BonusAction",
   reaction: "DND5E.Reaction",
-  minute: DND5E.timePeriods.minute,
-  hour: DND5E.timePeriods.hour,
-  day: DND5E.timePeriods.day,
+  minute: WANDS.timePeriods.minute,
+  hour: WANDS.timePeriods.hour,
+  day: WANDS.timePeriods.day,
   legendary: "DND5E.LegendaryAction.Label",
   mythic: "DND5E.MythicActionLabel",
   lair: "DND5E.LAIR.Action.Label",
@@ -1033,7 +1031,7 @@ preLocalize("abilityActivationTypes");
  * Configuration data for activation types on activities.
  * @enum {ActivityActivationTypeConfig}
  */
-DND5E.activityActivationTypes = {
+WANDS.activityActivationTypes = {
   action: {
     label: "DND5E.ACTIVATION.Type.Action.Label",
     header: "DND5E.ACTIVATION.Type.Action.Header",
@@ -1128,7 +1126,7 @@ preLocalize("activityActivationTypes", { key: "label" });
  * Different things that an ability can consume upon use.
  * @enum {string}
  */
-DND5E.abilityConsumptionTypes = {
+WANDS.abilityConsumptionTypes = {
   ammo: "DND5E.ConsumeAmmunition",
   attribute: "DND5E.ConsumeAttribute",
   hitDice: "DND5E.ConsumeHitDice",
@@ -1185,7 +1183,7 @@ preLocalize("abilityConsumptionTypes", { sort: true });
  * Configuration information for different consumption targets.
  * @enum {ActivityConsumptionTargetConfig}
  */
-DND5E.activityConsumptionTypes = {
+WANDS.activityConsumptionTypes = {
   activityUses: {
     label: "DND5E.CONSUMPTION.Type.ActivityUses.Label",
     consume: ConsumptionTargetData.consumeActivityUses,
@@ -1246,7 +1244,7 @@ preLocalize("activityConsumptionTypes", { key: "label" });
  * Creature sizes ordered from smallest to largest.
  * @enum {ActorSizeConfiguration}
  */
-DND5E.actorSizes = {
+WANDS.actorSizes = {
   tiny: {
     label: "DND5E.SizeTiny",
     abbreviation: "DND5E.SizeTinyAbbr",
@@ -1303,7 +1301,7 @@ preLocalize("actorSizes", { keys: ["label", "abbreviation"] });
  * Colors used to visualize temporary and temporary maximum HP in token health bars.
  * @enum {number}
  */
-DND5E.tokenHPColors = {
+WANDS.tokenHPColors = {
   damage: 0xFF0000,
   healing: 0x00FF00,
   temp: 0x66CCFF,
@@ -1317,7 +1315,7 @@ DND5E.tokenHPColors = {
  * Colors used when a dynamic token ring effects.
  * @enum {number}
  */
-DND5E.tokenRingColors = {
+WANDS.tokenRingColors = {
   damage: 0xFF0000,
   defeated: 0x000000,
   healing: 0x00FF00,
@@ -1330,7 +1328,7 @@ DND5E.tokenRingColors = {
  * Colors used to denote movement speed on ruler segments & grid highlighting
  * @enum {number}
  */
-DND5E.tokenRulerColors = {
+WANDS.tokenRulerColors = {
   normal: 0x33BC4E,
   double: 0xF1D836,
   triple: 0xE72124
@@ -1356,7 +1354,7 @@ DND5E.tokenRulerColors = {
  * Settings used to render map location markers on the canvas.
  * @enum {MapLocationMarkerStyle}
  */
-DND5E.mapLocationMarker = {
+WANDS.mapLocationMarker = {
   default: {
     icon: MapLocationControlIcon,
     backgroundColor: 0xFBF8F5,
@@ -1384,7 +1382,7 @@ DND5E.mapLocationMarker = {
  * Default types of creatures.
  * @enum {CreatureTypeConfiguration}
  */
-DND5E.creatureTypes = {
+WANDS.creatureTypes = {
   aberration: {
     label: "DND5E.CreatureAberration",
     plural: "DND5E.CreatureAberrationPl",
@@ -1484,7 +1482,7 @@ preLocalize("creatureTypes", { keys: ["label", "plural"], sort: true });
  * Classification types for item action types.
  * @enum {string}
  */
-DND5E.itemActionTypes = {
+WANDS.itemActionTypes = {
   mwak: "DND5E.ActionMWAK",
   rwak: "DND5E.ActionRWAK",
   msak: "DND5E.ActionMSAK",
@@ -1505,7 +1503,7 @@ preLocalize("itemActionTypes");
  * Different ways in which item capacity can be limited.
  * @enum {string}
  */
-DND5E.itemCapacityTypes = {
+WANDS.itemCapacityTypes = {
   items: "DND5E.ItemContainerCapacityItems",
   weight: "DND5E.ItemContainerCapacityWeight"
 };
@@ -1517,7 +1515,7 @@ preLocalize("itemCapacityTypes", { sort: true });
  * List of various item rarities.
  * @enum {string}
  */
-DND5E.itemRarity = {
+WANDS.itemRarity = {
   common: "DND5E.ItemRarityCommon",
   uncommon: "DND5E.ItemRarityUncommon",
   rare: "DND5E.ItemRarityRare",
@@ -1543,7 +1541,7 @@ preLocalize("itemRarity");
  * Enumerate the lengths of time over which an item can have limited use ability.
  * @enum {LimitedUsePeriodConfiguration}
  */
-DND5E.limitedUsePeriods = {
+WANDS.limitedUsePeriods = {
   lr: {
     label: "DND5E.USES.Recovery.Period.LongRest.Label",
     abbreviation: "DND5E.USES.Recovery.Period.LongRest.Abbreviation"
@@ -1589,10 +1587,10 @@ DND5E.limitedUsePeriods = {
 };
 preLocalize("limitedUsePeriods", { keys: ["label", "abbreviation"] });
 
-Object.defineProperty(DND5E.limitedUsePeriods, "recoveryOptions", {
+Object.defineProperty(WANDS.limitedUsePeriods, "recoveryOptions", {
   get() {
     return [
-      ...Object.entries(CONFIG.DND5E.limitedUsePeriods)
+      ...Object.entries(CONFIG.WANDS.limitedUsePeriods)
         .filter(([, config]) => !config.deprecated)
         .map(([value, { label, type }]) => ({
           value, label, group: game.i18n.localize(`DND5E.USES.Recovery.${type?.capitalize() ?? "Time"}`)
@@ -1608,7 +1606,7 @@ Object.defineProperty(DND5E.limitedUsePeriods, "recoveryOptions", {
  * Periods at which enchantments can be re-bound to new items.
  * @enum {{ label: string }}
  */
-DND5E.enchantmentPeriods = {
+WANDS.enchantmentPeriods = {
   sr: {
     label: "DND5E.ENCHANTMENT.Period.ShortRest"
   },
@@ -1627,7 +1625,7 @@ preLocalize("enchantmentPeriods", { key: "label" });
  * Specific equipment types that modify base AC.
  * @enum {string}
  */
-DND5E.armorTypes = {
+WANDS.armorTypes = {
   light: "DND5E.EquipmentLight",
   medium: "DND5E.EquipmentMedium",
   heavy: "DND5E.EquipmentHeavy",
@@ -1642,7 +1640,7 @@ preLocalize("armorTypes");
  * Equipment types that aren't armor.
  * @enum {string}
  */
-DND5E.miscEquipmentTypes = {
+WANDS.miscEquipmentTypes = {
   clothing: "DND5E.EQUIPMENT.Type.Clothing.Label",
   ring: "DND5E.EQUIPMENT.Type.Ring.Label",
   rod: "DND5E.EQUIPMENT.Type.Rod.Label",
@@ -1659,9 +1657,9 @@ preLocalize("miscEquipmentTypes", { sort: true });
  * The set of equipment types for armor, clothing, and other objects which can be worn by the character.
  * @enum {string}
  */
-DND5E.equipmentTypes = {
-  ...DND5E.miscEquipmentTypes,
-  ...DND5E.armorTypes
+WANDS.equipmentTypes = {
+  ...WANDS.miscEquipmentTypes,
+  ...WANDS.armorTypes
 };
 preLocalize("equipmentTypes", { sort: true });
 
@@ -1671,7 +1669,7 @@ preLocalize("equipmentTypes", { sort: true });
  * The various types of vehicles in which characters can be proficient.
  * @enum {string}
  */
-DND5E.vehicleTypes = {
+WANDS.vehicleTypes = {
   air: "DND5E.VehicleTypeAir",
   land: "DND5E.VehicleTypeLand",
   space: "DND5E.VehicleTypeSpace",
@@ -1685,7 +1683,7 @@ preLocalize("vehicleTypes", { sort: true });
  * The set of Armor Proficiencies which a character may have.
  * @type {object}
  */
-DND5E.armorProficiencies = {
+WANDS.armorProficiencies = {
   lgt: "DND5E.ArmorLightProficiency",
   med: "DND5E.ArmorMediumProficiency",
   hvy: "DND5E.ArmorHeavyProficiency",
@@ -1698,7 +1696,7 @@ preLocalize("armorProficiencies");
  * is used to determine if character has proficiency when adding an item.
  * @enum {(boolean|string)}
  */
-DND5E.armorProficienciesMap = {
+WANDS.armorProficienciesMap = {
   natural: true,
   clothing: true,
   light: "lgt",
@@ -1712,7 +1710,7 @@ DND5E.armorProficienciesMap = {
  * automated AC calculation in NPCs, and starting equipment.
  * @enum {string}
  */
-DND5E.armorIds = {
+WANDS.armorIds = {
   breastplate: "Compendium.dnd5e.equipment24.Item.phbarmBreastplat",
   chainmail: "Compendium.dnd5e.equipment24.Item.phbarmChainMail0",
   chainshirt: "Compendium.dnd5e.equipment24.Item.phbarmChainShirt",
@@ -1731,7 +1729,7 @@ DND5E.armorIds = {
  * The basic shield in 5e.
  * @enum {string}
  */
-DND5E.shieldIds = {
+WANDS.shieldIds = {
   shield: "Compendium.dnd5e.equipment24.Item.phbarmShield0000"
 };
 
@@ -1739,7 +1737,7 @@ DND5E.shieldIds = {
  * Common armor class calculations.
  * @enum {{ label: string, [formula]: string }}
  */
-DND5E.armorClasses = {
+WANDS.armorClasses = {
   flat: {
     label: "DND5E.ArmorClassFlat",
     formula: "@attributes.ac.flat"
@@ -1792,7 +1790,7 @@ preLocalize("armorClasses", { key: "label" });
  * Enumerate the valid consumable types which are recognized by the system.
  * @enum {SubtypeTypeConfiguration}
  */
-DND5E.consumableTypes = {
+WANDS.consumableTypes = {
   ammo: {
     label: "DND5E.CONSUMABLE.Type.Ammunition.Label",
     subtypes: {
@@ -1842,7 +1840,7 @@ preLocalize("consumableTypes.poison.subtypes", { sort: true });
  * Types of containers.
  * @enum {string}
  */
-DND5E.containerTypes = {
+WANDS.containerTypes = {
   backpack: "H8YCd689ezlD26aT",
   barrel: "7Yqbqg5EtVW16wfT",
   basket: "Wv7HzD6dv1P0q78N",
@@ -1877,7 +1875,7 @@ DND5E.containerTypes = {
  * Type of spellcasting foci.
  * @enum {SpellcastingFocusConfiguration}
  */
-DND5E.focusTypes = {
+WANDS.focusTypes = {
   arcane: {
     label: "DND5E.Focus.Arcane",
     itemIds: {
@@ -1913,7 +1911,7 @@ preLocalize("focusTypes", { key: "label" });
  * Types of "features" items.
  * @enum {SubtypeTypeConfiguration}
  */
-DND5E.featureTypes = {
+WANDS.featureTypes = {
   background: {
     label: "DND5E.Feature.Background"
   },
@@ -1996,7 +1994,7 @@ preLocalize("featureTypes.supernaturalGift.subtypes", { sort: true });
  * The various properties of all item types.
  * @enum {ItemPropertyConfiguration}
  */
-DND5E.itemProperties = {
+WANDS.itemProperties = {
   ada: {
     label: "DND5E.ITEM.Property.Adamantine",
     isPhysical: true
@@ -2102,7 +2100,7 @@ preLocalize("itemProperties", { keys: ["label", "abbreviation"], sort: true });
  * The various properties of an item per item type.
  * @enum {object}
  */
-DND5E.validProperties = {
+WANDS.validProperties = {
   class: new Set([
     "sidekick"
   ]),
@@ -2170,7 +2168,7 @@ DND5E.validProperties = {
  * Types of "loot" items.
  * @enum {LootTypeConfiguration}
  */
-DND5E.lootTypes = {
+WANDS.lootTypes = {
   art: {
     label: "DND5E.Loot.Art"
   },
@@ -2210,7 +2208,7 @@ preLocalize("lootTypes", { key: "label" });
  * The conversion number defines how many of that currency are equal to one GP.
  * @enum {CurrencyConfiguration}
  */
-DND5E.currencies = {
+WANDS.currencies = {
   pp: {
     label: "DND5E.CurrencyPP",
     abbreviation: "DND5E.CurrencyAbbrPP",
@@ -2272,7 +2270,7 @@ preLocalize("currencies", { keys: ["label", "abbreviation"] });
  * Configuration data for crafting costs.
  * @type {CraftingConfiguration}
  */
-DND5E.crafting = {
+WANDS.crafting = {
   consumable: {
     days: .5,
     gold: .5
@@ -2361,7 +2359,7 @@ DND5E.crafting = {
  * Standard dice spread available for things like damage.
  * @type {number[]}
  */
-DND5E.dieSteps = [4, 6, 8, 10, 12, 20, 100];
+WANDS.dieSteps = [4, 6, 8, 10, 12, 20, 100];
 
 /* -------------------------------------------- */
 
@@ -2369,7 +2367,7 @@ DND5E.dieSteps = [4, 6, 8, 10, 12, 20, 100];
  * Methods by which damage scales relative to the overall scaling increase.
  * @enum {{ label: string, labelCantrip: string }}
  */
-DND5E.damageScalingModes = {
+WANDS.damageScalingModes = {
   whole: {
     label: "DND5E.DAMAGE.Scaling.Whole",
     labelCantrip: "DND5E.DAMAGE.Scaling.WholeCantrip"
@@ -2398,7 +2396,7 @@ preLocalize("damageScalingModes", { keys: ["label", "labelCantrip"] });
  * Types of damage the can be caused by abilities.
  * @enum {DamageTypeConfiguration}
  */
-DND5E.damageTypes = {
+WANDS.damageTypes = {
   acid: {
     label: "DND5E.DamageAcid",
     icon: "systems/dnd5e/icons/svg/damage/acid.svg",
@@ -2489,14 +2487,14 @@ preLocalize("damageTypes", { keys: ["label"], sort: true });
  * Display aggregated damage in chat cards.
  * @type {boolean}
  */
-DND5E.aggregateDamageDisplay = true;
+WANDS.aggregateDamageDisplay = true;
 /* -------------------------------------------- */
 
 /**
  * Different types of healing that can be applied using abilities.
  * @enum {string}
  */
-DND5E.healingTypes = {
+WANDS.healingTypes = {
   healing: {
     label: "DND5E.Healing",
     icon: "systems/dnd5e/icons/svg/damage/healing.svg",
@@ -2518,7 +2516,7 @@ preLocalize("healingTypes", { keys: ["label"] });
  * Types of terrain that can cause difficult terrain.
  * @enum {{ label: string }}
  */
-DND5E.difficultTerrainTypes = {
+WANDS.difficultTerrainTypes = {
   ice: {
     label: "DND5E.REGIONBEHAVIORS.DIFFICULTTERRAIN.Type.Ice"
   },
@@ -2553,7 +2551,7 @@ preLocalize("difficultTerrainTypes", { key: "label", sort: true });
  * Types of movement supported by creature actors in the system.
  * @enum {MovementTypeConfig}
  */
-DND5E.movementTypes = {
+WANDS.movementTypes = {
   burrow: {
     label: "DND5E.MovementBurrow"
   },
@@ -2588,7 +2586,7 @@ patchConfig("movementTypes", "label", { since: "DnD5e 5.1", until: "DnD5e 5.3" }
  * Available travel paces.
  * @type {Readonly<Record<string, TravelPaceConfig>>}
  */
-DND5E.travelPace = Object.freeze({
+WANDS.travelPace = Object.freeze({
   slow: {
     label: "DND5E.Travel.Pace.Slow",
     standard: 18,
@@ -2615,7 +2613,7 @@ preLocalize("travelPace", { key: "label" });
  * Default units used for imperial & metric settings.
  * @enum {{ imperial: string, metric: string }}
  */
-DND5E.defaultUnits = {
+WANDS.defaultUnits = {
   length: {
     imperial: "ft",
     metric: "m"
@@ -2656,7 +2654,7 @@ DND5E.defaultUnits = {
  * The valid units of measure for movement distances in the game system.
  * @enum {UnitConfiguration}
  */
-DND5E.movementUnits = {
+WANDS.movementUnits = {
   ft: {
     label: "DND5E.UNITS.DISTANCE.Foot.Label",
     abbreviation: "DND5E.UNITS.DISTANCE.Foot.Abbreviation",
@@ -2698,7 +2696,7 @@ preLocalize("movementUnits", { keys: ["label", "abbreviation"] });
  * The types of range that are used for measuring actions and effects.
  * @enum {string}
  */
-DND5E.rangeTypes = {
+WANDS.rangeTypes = {
   self: "DND5E.DistSelf",
   touch: "DND5E.DistTouch",
   spec: "DND5E.Special",
@@ -2713,9 +2711,9 @@ preLocalize("rangeTypes");
  * `DND5E.rangeUnits`.
  * @enum {string}
  */
-DND5E.distanceUnits = {
-  ...Object.fromEntries(Object.entries(DND5E.movementUnits).map(([k, { label }]) => [k, label])),
-  ...DND5E.rangeTypes
+WANDS.distanceUnits = {
+  ...Object.fromEntries(Object.entries(WANDS.movementUnits).map(([k, { label }]) => [k, label])),
+  ...WANDS.rangeTypes
 };
 preLocalize("distanceUnits");
 
@@ -2725,7 +2723,7 @@ preLocalize("distanceUnits");
  * The valid units for measurement of volume.
  * @enum {UnitConfiguration}
  */
-DND5E.volumeUnits = {
+WANDS.volumeUnits = {
   cubicFoot: {
     label: "DND5E.UNITS.VOLUME.CubicFoot.Label",
     abbreviation: "DND5E.UNITS.Volume.CubicFoot.Abbreviation",
@@ -2748,7 +2746,7 @@ preLocalize("volumeUnits", { keys: ["label", "abbreviation"] });
  * The valid units for measurement of weight.
  * @enum {UnitConfiguration}
  */
-DND5E.weightUnits = {
+WANDS.weightUnits = {
   lb: {
     label: "DND5E.UNITS.WEIGHT.Pound.Label",
     abbreviation: "DND5E.UNITS.WEIGHT.Pound.Abbreviation",
@@ -2801,22 +2799,22 @@ preLocalize("weightUnits", { keys: ["label", "abbreviation"] });
  * Configure aspects of encumbrance calculation so that it could be configured by modules.
  * @type {EncumbranceConfiguration}
  */
-DND5E.encumbrance = {
+WANDS.encumbrance = {
   currencyPerWeight: {
     imperial: 50,
     metric: 110
   },
   effects: {
     encumbered: {
-      name: "EFFECT.DND5E.StatusEncumbered",
+      name: "EFFECT.WANDS.StatusEncumbered",
       img: "systems/dnd5e/icons/svg/statuses/encumbered.svg"
     },
     heavilyEncumbered: {
-      name: "EFFECT.DND5E.StatusHeavilyEncumbered",
+      name: "EFFECT.WANDS.StatusHeavilyEncumbered",
       img: "systems/dnd5e/icons/svg/statuses/heavily-encumbered.svg"
     },
     exceedingCarryingCapacity: {
-      name: "EFFECT.DND5E.StatusExceedingCarryingCapacity",
+      name: "EFFECT.WANDS.StatusExceedingCarryingCapacity",
       img: "systems/dnd5e/icons/svg/statuses/exceeding-carrying-capacity.svg"
     }
   },
@@ -2876,7 +2874,7 @@ preLocalize("encumbrance.effects", { key: "name" });
  * Targeting types that apply to one or more distinct targets.
  * @enum {IndividualTargetDefinition}
  */
-DND5E.individualTargetTypes = {
+WANDS.individualTargetTypes = {
   self: {
     label: "DND5E.TARGET.Type.Self.Label",
     scalar: false
@@ -2936,7 +2934,7 @@ preLocalize("individualTargetTypes", { key: "label" });
  * Targeting types that cover an area.
  * @enum {AreaTargetDefinition}
  */
-DND5E.areaTargetTypes = {
+WANDS.areaTargetTypes = {
   circle: {
     label: "DND5E.TARGET.Type.Circle.Label",
     counted: "DND5E.TARGET.Type.Circle.Counted",
@@ -3004,7 +3002,7 @@ DND5E.areaTargetTypes = {
 };
 preLocalize("areaTargetTypes", { key: "label", sort: true });
 
-Object.defineProperty(DND5E, "areaTargetOptions", {
+Object.defineProperty(WANDS, "areaTargetOptions", {
   get() {
     const { primary, secondary } = Object.entries(this.areaTargetTypes).reduce((obj, [value, data]) => {
       const entry = { value, label: data.label };
@@ -3022,9 +3020,9 @@ Object.defineProperty(DND5E, "areaTargetOptions", {
  * The types of single or area targets which can be applied to abilities.
  * @enum {string}
  */
-DND5E.targetTypes = {
-  ...Object.fromEntries(Object.entries(DND5E.individualTargetTypes).map(([k, v]) => [k, v.label])),
-  ...Object.fromEntries(Object.entries(DND5E.areaTargetTypes).map(([k, v]) => [k, v.label]))
+WANDS.targetTypes = {
+  ...Object.fromEntries(Object.entries(WANDS.individualTargetTypes).map(([k, v]) => [k, v.label])),
+  ...Object.fromEntries(Object.entries(WANDS.areaTargetTypes).map(([k, v]) => [k, v.label]))
 };
 preLocalize("targetTypes", { sort: true });
 
@@ -3034,7 +3032,7 @@ preLocalize("targetTypes", { sort: true });
  * Denominations of hit dice which can apply to classes.
  * @type {string[]}
  */
-DND5E.hitDieTypes = ["d4", "d6", "d8", "d10", "d12"];
+WANDS.hitDieTypes = ["d4", "d6", "d8", "d10", "d12"];
 
 /* -------------------------------------------- */
 
@@ -3060,7 +3058,7 @@ DND5E.hitDieTypes = ["d4", "d6", "d8", "d10", "d12"];
  * Types of rests.
  * @enum {RestConfiguration}
  */
-DND5E.restTypes = {
+WANDS.restTypes = {
   short: {
     duration: {
       normal: 60,
@@ -3099,7 +3097,7 @@ preLocalize("restTypes", { key: "label" });
  * The set of possible sensory perception types which an Actor may have.
  * @enum {string}
  */
-DND5E.senses = {
+WANDS.senses = {
   blindsight: "DND5E.SenseBlindsight",
   darkvision: "DND5E.SenseDarkvision",
   tremorsense: "DND5E.SenseTremorsense",
@@ -3115,7 +3113,7 @@ preLocalize("senses", { sort: true });
  * Classifications of attacks based on what is performing them.
  * @enum {{ label: string }}
  */
-DND5E.attackClassifications = {
+WANDS.attackClassifications = {
   weapon: {
     label: "DND5E.ATTACK.Classification.Weapon"
   },
@@ -3134,7 +3132,7 @@ preLocalize("attackClassifications", { key: "label" });
  * Attack modes available for weapons.
  * @enum {string}
  */
-DND5E.attackModes = Object.seal({
+WANDS.attackModes = Object.seal({
   oneHanded: {
     label: "DND5E.ATTACK.Mode.OneHanded"
   },
@@ -3162,7 +3160,7 @@ preLocalize("attackModes", { key: "label" });
  * Types of attacks based on range.
  * @enum {{ label: string }}
  */
-DND5E.attackTypes = Object.seal({
+WANDS.attackTypes = Object.seal({
   melee: {
     label: "DND5E.ATTACK.Type.Melee"
   },
@@ -3181,7 +3179,7 @@ preLocalize("attackTypes", { key: "label" });
  * The entries of this array represent the spell slot progression for a full spell-caster.
  * @type {SpellcastingTable5e}
  */
-const SPELL_SLOT_TABLE = DND5E.SPELL_SLOT_TABLE = [
+const SPELL_SLOT_TABLE = WANDS.SPELL_SLOT_TABLE = [
   [2],
   [3],
   [4, 2],
@@ -3210,7 +3208,7 @@ const SPELL_SLOT_TABLE = DND5E.SPELL_SLOT_TABLE = [
  * Define the pact slot & level progression by pact caster level.
  * @type {SpellcastingTableSingle5e}
  */
-const pactCastingProgression = DND5E.pactCastingProgression = {
+const pactCastingProgression = WANDS.pactCastingProgression = {
   1: { slots: 1, level: 1 },
   2: { slots: 2, level: 1 },
   3: { slots: 2, level: 2 },
@@ -3277,7 +3275,7 @@ const pactCastingProgression = DND5E.pactCastingProgression = {
  * Available spellcasting methods.
  * @type {Record<string, SpellcastingMethod5e>}
  */
-DND5E.spellcasting = {
+WANDS.spellcasting = {
   atwill: {
     label: "DND5E.SPELLCASTING.METHODS.AtWill.label",
     order: -30
@@ -3351,7 +3349,7 @@ preLocalize("spellcasting.pact.progression", { key: "label" });
  * Spell preparation states.
  * @type {Record<string, SpellcastingPreparationState5e>}
  */
-DND5E.spellPreparationStates = {
+WANDS.spellPreparationStates = {
   unprepared: {
     label: "DND5E.SPELLCASTING.STATES.Unprepared",
     value: 0
@@ -3373,7 +3371,7 @@ preLocalize("spellPreparationStates", { key: "label" });
  * Spell lists that will be registered by the system during init.
  * @type {string[]}
  */
-DND5E.SPELL_LISTS = Object.freeze([
+WANDS.SPELL_LISTS = Object.freeze([
   "Compendium.dnd5e.content24.JournalEntry.phbSpells0000000.JournalEntryPage.wwia6Wwo4BgE9GSI",
   "Compendium.dnd5e.content24.JournalEntry.phbSpells0000000.JournalEntryPage.SkHptN2PTzFGDaEj",
   "Compendium.dnd5e.content24.JournalEntry.phbSpells0000000.JournalEntryPage.LhvuDQEyrCdg5EfU",
@@ -3398,16 +3396,16 @@ DND5E.SPELL_LISTS = Object.freeze([
  * @deprecated since 5.1
  * @ignore
  */
-DND5E.spellPreparationModes = new Proxy(DND5E.spellcasting, {
+WANDS.spellPreparationModes = new Proxy(WANDS.spellcasting, {
   get(target, prop, receiver) {
-    foundry.utils.logCompatibilityWarning("CONFIG.DND5E.spellPreparationModes is deprecated, use CONFIG.DND5E.spellcasting"
+    foundry.utils.logCompatibilityWarning("CONFIG.WANDS.spellPreparationModes is deprecated, use CONFIG.WANDS.spellcasting"
       + " instead.", { since: "DnD5e 5.1", until: "DnD5e 5.4" });
     if ( (prop === "prepared") || (prop === "always") ) prop = "spell";
     return Reflect.get(target, prop, receiver);
   },
 
   set(target, prop, value, receiver) {
-    foundry.utils.logCompatibilityWarning("CONFIG.DND5E.spellPreparationModes is deprecated, use CONFIG.DND5E.spellcasting"
+    foundry.utils.logCompatibilityWarning("CONFIG.WANDS.spellPreparationModes is deprecated, use CONFIG.WANDS.spellcasting"
       + " instead.", { since: "DnD5e 5.1", until: "DnD5e 5.4" });
     if ( (prop === "prepared") || (prop === "always") ) prop = "spell";
     return Reflect.set(target, prop, value, receiver);
@@ -3420,20 +3418,20 @@ DND5E.spellPreparationModes = new Proxy(DND5E.spellcasting, {
  * @deprecated since 5.1
  * @ignore
  */
-DND5E.spellcastingTypes = new Proxy(DND5E.spellcasting, {
+WANDS.spellcastingTypes = new Proxy(WANDS.spellcasting, {
   get(target, prop, receiver) {
-    foundry.utils.logCompatibilityWarning("CONFIG.DND5E.spellcastingTypes is deprecated, use CONFIG.DND5E.spellcasting"
+    foundry.utils.logCompatibilityWarning("CONFIG.WANDS.spellcastingTypes is deprecated, use CONFIG.WANDS.spellcasting"
       + " instead.", { since: "DnD5e 5.1", until: "DnD5e 5.4" });
     if ( prop === "leveled" ) prop = "spell";
     return Reflect.get(target, prop, receiver);
   },
 
   set(target, prop, value, receiver) {
-    foundry.utils.logCompatibilityWarning("CONFIG.DND5E.spellcastingTypes is deprecated, use CONFIG.DND5E.spellcasting"
+    foundry.utils.logCompatibilityWarning("CONFIG.WANDS.spellcastingTypes is deprecated, use CONFIG.WANDS.spellcasting"
       + " instead.", { since: "DnD5e 5.1", until: "DnD5e 5.4" });
     if ( prop === "leveled" ) prop = "spell";
     if ( !("type" in value) ) value.type = "single";
-    if ( !("table" in value) ) value.table = DND5E.pactCastingProgression;
+    if ( !("table" in value) ) value.table = WANDS.pactCastingProgression;
     if ( !("progression" in value) ) value.progression = { [prop]: { label: value.label } };
     return Reflect.set(target, prop, value, receiver);
   }
@@ -3444,10 +3442,10 @@ DND5E.spellcastingTypes = new Proxy(DND5E.spellcasting, {
 /**
  * @ignore
  */
-DND5E.spellProgression = new Proxy({}, {
+WANDS.spellProgression = new Proxy({}, {
   set() {
-    foundry.utils.logCompatibilityWarning("CONFIG.DND5E.spellProgression is read-only. Spell progressions must be set "
-      + "on CONFIG.DND5E.spellcasting instead.", { since: "DnD5e 5.1", until: "DnD5e 5.4" });
+    foundry.utils.logCompatibilityWarning("CONFIG.WANDS.spellProgression is read-only. Spell progressions must be set "
+      + "on CONFIG.WANDS.spellcasting instead.", { since: "DnD5e 5.1", until: "DnD5e 5.4" });
     return true;
   }
 });
@@ -3459,7 +3457,7 @@ DND5E.spellProgression = new Proxy({}, {
  * Valid spell levels.
  * @enum {string}
  */
-DND5E.spellLevels = {
+WANDS.spellLevels = {
   0: "DND5E.SpellLevel0",
   1: "DND5E.SpellLevel1",
   2: "DND5E.SpellLevel2",
@@ -3479,7 +3477,7 @@ preLocalize("spellLevels");
  * The available choices for how spell damage scaling may be computed.
  * @enum {string}
  */
-DND5E.spellScalingModes = {
+WANDS.spellScalingModes = {
   none: "DND5E.SpellNone",
   cantrip: "DND5E.SpellCantrip",
   level: "DND5E.SpellLevel"
@@ -3502,7 +3500,7 @@ preLocalize("spellScalingModes", { sort: true });
  * Schools to which a spell can belong.
  * @enum {SpellSchoolConfiguration}
  */
-DND5E.spellSchools = {
+WANDS.spellSchools = {
   abj: {
     label: "DND5E.SchoolAbj",
     icon: "systems/dnd5e/icons/svg/schools/abjuration.svg",
@@ -3560,12 +3558,12 @@ preLocalize("spellSchools", { key: "label", sort: true });
  * Types of spell lists.
  * @enum {string}
  */
-DND5E.spellListTypes = {
+WANDS.spellListTypes = {
   class: "TYPES.Item.class",
   subclass: "TYPES.Item.subclass",
   background: "TYPES.Item.background",
   race: "TYPES.Item.race",
-  other: "JOURNALENTRYPAGE.DND5E.SpellList.Type.Other"
+  other: "JOURNALENTRYPAGE.WANDS.SpellList.Type.Other"
 };
 preLocalize("spellListTypes");
 
@@ -3575,7 +3573,7 @@ preLocalize("spellListTypes");
  * Spell scroll item ID within the `DND5E.sourcePacks` compendium or a full UUID for each spell level.
  * @enum {string}
  */
-DND5E.spellScrollIds = {
+WANDS.spellScrollIds = {
   0: "Compendium.dnd5e.equipment24.Item.dmgSpellScrollCa",
   1: "Compendium.dnd5e.equipment24.Item.dmgSpellScroll1s",
   2: "Compendium.dnd5e.equipment24.Item.dmgSpellScroll2n",
@@ -3601,7 +3599,7 @@ DND5E.spellScrollIds = {
  * then the nearest level lower than it will be selected.
  * @enum {SpellScrollValues}
  */
-DND5E.spellScrollValues = {
+WANDS.spellScrollValues = {
   0: { dc: 13, bonus: 5 },
   3: { dc: 15, bonus: 7 },
   5: { dc: 17, bonus: 9 },
@@ -3615,7 +3613,7 @@ DND5E.spellScrollValues = {
  * Compendium packs used for localized items.
  * @enum {string}
  */
-DND5E.sourcePacks = {
+WANDS.sourcePacks = {
   BACKGROUNDS: "dnd5e.backgrounds",
   CLASSES: "dnd5e.classes",
   ITEMS: "dnd5e.items",
@@ -3656,7 +3654,7 @@ DND5E.sourcePacks = {
  * Settings that configuration how actors are changed when transformation is applied.
  * @typedef {TransformationConfiguration}
  */
-DND5E.transformation = {
+WANDS.transformation = {
   effects: {
     all: {
       label: "DND5E.TRANSFORM.Setting.Effects.All.Label",
@@ -3807,7 +3805,7 @@ preLocalize("transformation.presets", { key: "label", sort: true });
  * The key for each level represents its proficiency multiplier.
  * @enum {string}
  */
-DND5E.proficiencyLevels = {
+WANDS.proficiencyLevels = {
   0: "DND5E.NotProficient",
   1: "DND5E.Proficient",
   0.5: "DND5E.HalfProficient",
@@ -3821,7 +3819,7 @@ preLocalize("proficiencyLevels");
  * Weapon and armor item proficiency levels.
  * @enum {string}
  */
-DND5E.weaponAndArmorProficiencyLevels = {
+WANDS.weaponAndArmorProficiencyLevels = {
   0: "DND5E.NotProficient",
   1: "DND5E.Proficient"
 };
@@ -3834,7 +3832,7 @@ preLocalize("weaponAndArmorProficiencyLevels");
  * of cover are in play, we take the highest value.
  * @enum {string}
  */
-DND5E.cover = {
+WANDS.cover = {
   0: "DND5E.None",
   .5: "DND5E.CoverHalf",
   .75: "DND5E.CoverThreeQuarters",
@@ -3849,7 +3847,7 @@ preLocalize("cover");
  * @type {string[]}
  * @deprecated since v10
  */
-DND5E.trackableAttributes = [
+WANDS.trackableAttributes = [
   "attributes.ac.value", "attributes.init.bonus", "attributes.movement", "attributes.senses",
   "attributes.spell.attack", "attributes.spell.dc", "attributes.spell.level", "details.cr",
   "details.xp.value", "skills.*.passive", "abilities.*.value"
@@ -3861,7 +3859,7 @@ DND5E.trackableAttributes = [
  * A selection of actor and item attributes that are valid targets for item resource consumption.
  * @type {string[]}
  */
-DND5E.consumableResources = [
+WANDS.consumableResources = [
   // Configured during init.
 ];
 
@@ -3907,9 +3905,9 @@ DND5E.consumableResources = [
  * Conditions that can affect an actor.
  * @enum {ConditionConfiguration}
  */
-DND5E.conditionTypes = {
+WANDS.conditionTypes = {
   bleeding: {
-    name: "EFFECT.DND5E.StatusBleeding",
+    name: "EFFECT.WANDS.StatusBleeding",
     img: "systems/dnd5e/icons/svg/statuses/bleeding.svg",
     pseudo: true
   },
@@ -3920,7 +3918,7 @@ DND5E.conditionTypes = {
     special: "BLIND"
   },
   burning: {
-    name: "EFFECT.DND5E.StatusBurning",
+    name: "EFFECT.WANDS.StatusBurning",
     img: "systems/dnd5e/icons/svg/statuses/burning.svg",
     reference: "Compendium.dnd5e.content24.JournalEntry.phbAppendixCRule.JournalEntryPage.mPBGM1vguT5IPzxT",
     pseudo: true
@@ -3931,12 +3929,12 @@ DND5E.conditionTypes = {
     reference: "Compendium.dnd5e.content24.JournalEntry.phbAppendixCRule.JournalEntryPage.vLAsIUa0FhZNsyLk"
   },
   cursed: {
-    name: "EFFECT.DND5E.StatusCursed",
+    name: "EFFECT.WANDS.StatusCursed",
     img: "systems/dnd5e/icons/svg/statuses/cursed.svg",
     pseudo: true
   },
   dehydration: {
-    name: "EFFECT.DND5E.StatusDehydration",
+    name: "EFFECT.WANDS.StatusDehydration",
     img: "systems/dnd5e/icons/svg/statuses/dehydration.svg",
     reference: "Compendium.dnd5e.content24.JournalEntry.phbAppendixCRule.JournalEntryPage.FZFvLNOX0lHaHZ1k",
     pseudo: true
@@ -3960,7 +3958,7 @@ DND5E.conditionTypes = {
     reduction: { rolls: 2, speed: 5 }
   },
   falling: {
-    name: "EFFECT.DND5E.StatusFalling",
+    name: "EFFECT.WANDS.StatusFalling",
     img: "systems/dnd5e/icons/svg/statuses/falling.svg",
     reference: "Compendium.dnd5e.content24.JournalEntry.phbAppendixDRule.JournalEntryPage.kREHL5pgNUOhay9f",
     pseudo: true
@@ -3987,7 +3985,7 @@ DND5E.conditionTypes = {
     reference: "Compendium.dnd5e.content24.JournalEntry.phbAppendixCRule.JournalEntryPage.MQIZ1zRLWRcNOtPN"
   },
   malnutrition: {
-    name: "EFFECT.DND5E.StatusMalnutrition",
+    name: "EFFECT.WANDS.StatusMalnutrition",
     img: "systems/dnd5e/icons/svg/statuses/malnutrition.svg",
     reference: "Compendium.dnd5e.content24.JournalEntry.phbAppendixCRule.JournalEntryPage.earBo4vQPC1ti4g7",
     pseudo: true
@@ -4020,7 +4018,7 @@ DND5E.conditionTypes = {
     reference: "Compendium.dnd5e.content24.JournalEntry.phbAppendixCRule.JournalEntryPage.dqLeGdpHtb8FfcxX"
   },
   silenced: {
-    name: "EFFECT.DND5E.StatusSilenced",
+    name: "EFFECT.WANDS.StatusSilenced",
     img: "systems/dnd5e/icons/svg/statuses/silenced.svg",
     pseudo: true
   },
@@ -4031,18 +4029,18 @@ DND5E.conditionTypes = {
     statuses: ["incapacitated"]
   },
   suffocation: {
-    name: "EFFECT.DND5E.StatusSuffocation",
+    name: "EFFECT.WANDS.StatusSuffocation",
     img: "systems/dnd5e/icons/svg/statuses/suffocation.svg",
     reference: "Compendium.dnd5e.content24.JournalEntry.phbAppendixCRule.JournalEntryPage.gAvV8TLyS8UGq00x",
     pseudo: true
   },
   surprised: {
-    name: "EFFECT.DND5E.StatusSurprised",
+    name: "EFFECT.WANDS.StatusSurprised",
     img: "systems/dnd5e/icons/svg/statuses/surprised.svg",
     pseudo: true
   },
   transformed: {
-    name: "EFFECT.DND5E.StatusTransformed",
+    name: "EFFECT.WANDS.StatusTransformed",
     img: "systems/dnd5e/icons/svg/statuses/transformed.svg",
     pseudo: true
   },
@@ -4063,7 +4061,7 @@ preLocalize("conditionTypes", { key: "name", sort: true });
  * and with a number appended for a level of exhaustion.
  * @enum {object}
  */
-DND5E.conditionEffects = {
+WANDS.conditionEffects = {
   noMovement: new Set(["exhaustion-5", "grappled", "paralyzed", "petrified", "restrained", "unconscious"]),
   halfMovement: new Set(["exhaustion-2"]),
   crawl: new Set(["prone", "exceedingCarryingCapacity"]),
@@ -4086,78 +4084,78 @@ DND5E.conditionEffects = {
  * data will be merged into the core data.
  * @enum {Omit<StatusEffectConfig5e, "img"> & { icon: string }}
  */
-DND5E.statusEffects = {
+WANDS.statusEffects = {
   burrowing: {
-    name: "EFFECT.DND5E.StatusBurrowing",
+    name: "EFFECT.WANDS.StatusBurrowing",
     img: "systems/dnd5e/icons/svg/statuses/burrowing.svg",
     special: "BURROW"
   },
   concentrating: {
-    name: "EFFECT.DND5E.StatusConcentrating",
+    name: "EFFECT.WANDS.StatusConcentrating",
     img: "systems/dnd5e/icons/svg/statuses/concentrating.svg",
     special: "CONCENTRATING"
   },
   coverHalf: {
-    name: "EFFECT.DND5E.StatusHalfCover",
+    name: "EFFECT.WANDS.StatusHalfCover",
     img: "systems/dnd5e/icons/svg/statuses/cover-half.svg",
     order: 2,
     exclusiveGroup: "cover",
     coverBonus: 2
   },
   coverThreeQuarters: {
-    name: "EFFECT.DND5E.StatusThreeQuartersCover",
+    name: "EFFECT.WANDS.StatusThreeQuartersCover",
     img: "systems/dnd5e/icons/svg/statuses/cover-three-quarters.svg",
     order: 3,
     exclusiveGroup: "cover",
     coverBonus: 5
   },
   coverTotal: {
-    name: "EFFECT.DND5E.StatusTotalCover",
+    name: "EFFECT.WANDS.StatusTotalCover",
     img: "systems/dnd5e/icons/svg/statuses/cover-total.svg",
     order: 4,
     exclusiveGroup: "cover"
   },
   dead: {
-    name: "EFFECT.DND5E.StatusDead",
+    name: "EFFECT.WANDS.StatusDead",
     img: "systems/dnd5e/icons/svg/statuses/dead.svg",
     special: "DEFEATED",
     order: 1,
     neverBlockMovement: true
   },
   dodging: {
-    name: "EFFECT.DND5E.StatusDodging",
+    name: "EFFECT.WANDS.StatusDodging",
     img: "systems/dnd5e/icons/svg/statuses/dodging.svg"
   },
   ethereal: {
-    name: "EFFECT.DND5E.StatusEthereal",
+    name: "EFFECT.WANDS.StatusEthereal",
     img: "systems/dnd5e/icons/svg/statuses/ethereal.svg",
     neverBlockMovement: true
   },
   flying: {
-    name: "EFFECT.DND5E.StatusFlying",
+    name: "EFFECT.WANDS.StatusFlying",
     img: "systems/dnd5e/icons/svg/statuses/flying.svg",
     special: "FLY"
   },
   hiding: {
-    name: "EFFECT.DND5E.StatusHiding",
+    name: "EFFECT.WANDS.StatusHiding",
     img: "systems/dnd5e/icons/svg/statuses/hiding.svg"
   },
   hovering: {
-    name: "EFFECT.DND5E.StatusHovering",
+    name: "EFFECT.WANDS.StatusHovering",
     img: "systems/dnd5e/icons/svg/statuses/hovering.svg",
     special: "HOVER"
   },
   marked: {
-    name: "EFFECT.DND5E.StatusMarked",
+    name: "EFFECT.WANDS.StatusMarked",
     img: "systems/dnd5e/icons/svg/statuses/marked.svg"
   },
   sleeping: {
-    name: "EFFECT.DND5E.StatusSleeping",
+    name: "EFFECT.WANDS.StatusSleeping",
     img: "systems/dnd5e/icons/svg/statuses/sleeping.svg",
     statuses: ["incapacitated", "unconscious"]
   },
   stable: {
-    name: "EFFECT.DND5E.StatusStable",
+    name: "EFFECT.WANDS.StatusStable",
     img: "systems/dnd5e/icons/svg/statuses/stable.svg"
   }
 };
@@ -4168,7 +4166,7 @@ DND5E.statusEffects = {
  * Status effects that never block token movement. Populated during the setup process.
  * @type {Set<string>}
  */
-DND5E.neverBlockStatuses = new Set();
+WANDS.neverBlockStatuses = new Set();
 
 /* -------------------------------------------- */
 
@@ -4176,8 +4174,8 @@ DND5E.neverBlockStatuses = new Set();
  * Configuration for the special bloodied status effect.
  * @type {{ name: string, icon: string, threshold: number }}
  */
-DND5E.bloodied = {
-  name: "EFFECT.DND5E.StatusBloodied",
+WANDS.bloodied = {
+  name: "EFFECT.WANDS.StatusBloodied",
   img: "systems/dnd5e/icons/svg/statuses/bloodied.svg",
   threshold: .5
 };
@@ -4190,7 +4188,7 @@ DND5E.bloodied = {
  * Languages a character can learn.
  * @enum {object}
  */
-DND5E.languages = {
+WANDS.languages = {
   standard: {
     label: "DND5E.Language.Category.Standard",
     selectable: false,
@@ -4245,7 +4243,7 @@ preLocalize("languages.exotic.children.primordial.children", { sort: true });
  * Communication types that take ranges such as telepathy.
  * @enum {{ label: string }}
  */
-DND5E.communicationTypes = {
+WANDS.communicationTypes = {
   telepathy: {
     label: "DND5E.Language.Communication.Telepathy"
   }
@@ -4264,7 +4262,7 @@ preLocalize("communicationTypes", { key: "label" });
  * NPC habitats.
  * @type {Record<string, HabitatConfiguration5e>}
  */
-DND5E.habitats = {
+WANDS.habitats = {
   any: {
     label: "DND5E.Habitat.Categories.Any"
   },
@@ -4319,7 +4317,7 @@ preLocalize("habitats", { key: "label" });
  * NPC Treasure
  * @type {Record<string, TreasureConfiguration5e>}
  */
-DND5E.treasure = {
+WANDS.treasure = {
   any: {
     label: "DND5E.Treasure.Categories.Any"
   },
@@ -4347,19 +4345,19 @@ preLocalize("treasure", { key: "label" });
  * Maximum allowed character level.
  * @type {number}
  */
-DND5E.maxLevel = 20;
+WANDS.maxLevel = 20;
 
 /**
  * Maximum ability score value allowed by default.
  * @type {number}
  */
-DND5E.maxAbilityScore = 20;
+WANDS.maxAbilityScore = 20;
 
 /**
  * XP required to achieve each character level.
  * @type {number[]}
  */
-DND5E.CHARACTER_EXP_LEVELS = [
+WANDS.CHARACTER_EXP_LEVELS = [
   0, 300, 900, 2700, 6500, 14000, 23000, 34000, 48000, 64000, 85000, 100000,
   120000, 140000, 165000, 195000, 225000, 265000, 305000, 355000
 ];
@@ -4368,7 +4366,7 @@ DND5E.CHARACTER_EXP_LEVELS = [
  * XP granted for each challenge rating.
  * @type {number[]}
  */
-DND5E.CR_EXP_LEVELS = [
+WANDS.CR_EXP_LEVELS = [
   10, 200, 450, 700, 1100, 1800, 2300, 2900, 3900, 5000, 5900, 7200, 8400, 10000, 11500, 13000, 15000, 18000,
   20000, 22000, 25000, 33000, 41000, 50000, 62000, 75000, 90000, 105000, 120000, 135000, 155000
 ];
@@ -4377,7 +4375,7 @@ DND5E.CR_EXP_LEVELS = [
  * XP thresholds for encounter difficulty.
  * @type {number[][]}
  */
-DND5E.ENCOUNTER_DIFFICULTY = [
+WANDS.ENCOUNTER_DIFFICULTY = [
   [0, 0, 0],
   [50, 75, 100],
   [100, 150, 200],
@@ -4405,7 +4403,7 @@ DND5E.ENCOUNTER_DIFFICULTY = [
  * Intervals above the maximum XP that result in an epic boon.
  * @type {number}
  */
-DND5E.epicBoonInterval = 30000;
+WANDS.epicBoonInterval = 30000;
 
 /* -------------------------------------------- */
 
@@ -4423,13 +4421,13 @@ DND5E.epicBoonInterval = 30000;
  * @property {string} [actorKeyPath]       If the trait doesn't directly map to an entry as `traits.[key]`, where is
  *                                         this trait's data stored on the actor?
  * @property {string} [configKey]          If the list of trait options doesn't match the name of the trait, where can
- *                                         the options be found within `CONFIG.DND5E`?
+ *                                         the options be found within `CONFIG.WANDS`?
  * @property {boolean|number} [dataType]   Type of data represented.
  * @property {string} [labelKeyPath]       If config is an enum of objects, where can the label be found?
  * @property {object} [subtypes]           Configuration for traits that take some sort of base item.
  * @property {string} [subtypes.keyPath]   Path to subtype value on base items, should match a category key.
  *                                         Deprecated in favor of the standardized `system.type.value`.
- * @property {string[]} [subtypes.ids]     Key for base item ID objects within `CONFIG.DND5E`.
+ * @property {string[]} [subtypes.ids]     Key for base item ID objects within `CONFIG.WANDS`.
  * @property {object} [children]           Mapping of category key to an object defining its children.
  * @property {boolean} [sortCategories]    Whether top-level categories should be sorted.
  * @property {boolean} [expertise]         Can an actor receive expertise in this trait?
@@ -4440,7 +4438,7 @@ DND5E.epicBoonInterval = 30000;
  * Configurable traits on actors.
  * @enum {TraitConfiguration}
  */
-DND5E.traits = {
+WANDS.traits = {
   saves: {
     labels: {
       title: "DND5E.ClassSaves",
@@ -4555,7 +4553,7 @@ preLocalize("traits", { keys: ["labels.title", "labels.all"] });
  * Modes used within a trait advancement.
  * @enum {object}
  */
-DND5E.traitModes = {
+WANDS.traitModes = {
   default: {
     label: "DND5E.ADVANCEMENT.Trait.Mode.Default.Label",
     hint: "DND5E.ADVANCEMENT.Trait.Mode.Default.Hint"
@@ -4598,7 +4596,7 @@ preLocalize("traitModes", { keys: ["label", "hint"] });
  * Special character flags.
  * @enum {CharacterFlagConfig}
  */
-DND5E.characterFlags = {
+WANDS.characterFlags = {
   diamondSoul: {
     name: "DND5E.FlagsDiamondSoul",
     hint: "DND5E.FlagsDiamondSoulHint",
@@ -4710,7 +4708,7 @@ preLocalize("characterFlags", { keys: ["name", "hint", "section"] });
  * Different types of actor structures that groups can represent.
  * @enum {object}
  */
-DND5E.groupTypes = {
+WANDS.groupTypes = {
   party: "DND5E.Group.TypeParty",
   encounter: "DND5E.Group.TypeEncounter"
 };
@@ -4726,7 +4724,7 @@ preLocalize("groupTypes");
  * @property {boolean} [configurable=true]    Whether the activity is editable via the UI.
  * @property {boolean} [hidden]               Should this activity type be hidden in the selection dialog?
  */
-DND5E.activityTypes = {
+WANDS.activityTypes = {
   attack: {
     documentClass: activities.AttackActivity
   },
@@ -4783,7 +4781,7 @@ const _ALL_ITEM_TYPES = ["background", "class", "feat", "race", "subclass"];
  * Advancement types that can be added to items.
  * @enum {AdvancementTypeConfiguration}
  */
-DND5E.advancementTypes = {
+WANDS.advancementTypes = {
   AbilityScoreImprovement: {
     documentClass: advancement.AbilityScoreImprovementAdvancement,
     validItemTypes: new Set(["background", "class", "race", "feat"])
@@ -4824,7 +4822,7 @@ DND5E.advancementTypes = {
  * Default artwork configuration for each Document type and sub-type.
  * @type {Record<string, Record<string, string>>}
  */
-DND5E.defaultArtwork = {
+WANDS.defaultArtwork = {
   Item: {
     background: "systems/dnd5e/icons/svg/items/background.svg",
     class: "systems/dnd5e/icons/svg/items/class.svg",
@@ -4864,7 +4862,7 @@ DND5E.defaultArtwork = {
  * Handler functions for named request/response operations
  * @type {Record<string, RequestCallback5e>}
  */
-DND5E.requests = {
+WANDS.requests = {
   rest: Actor5e.handleRestRequest,
   skill: Actor5e.handleSkillCheckRequest
 };
@@ -4885,7 +4883,7 @@ DND5E.requests = {
  * Types of rules that can be used in rule pages and the &Reference enricher.
  * @enum {RuleTypeConfiguration}
  */
-DND5E.ruleTypes = {
+WANDS.ruleTypes = {
   rule: {
     label: "DND5E.Rule.Type.Rule",
     references: "rules"
@@ -4939,7 +4937,7 @@ preLocalize("ruleTypes", { key: "label" });
  * List of rules that can be referenced from enrichers.
  * @enum {string}
  */
-DND5E.rules = {
+WANDS.rules = {
   inspiration: "Compendium.dnd5e.content24.JournalEntry.phbAppendixDRule.JournalEntryPage.nkEPI89CiQnOaLYh",
   carryingcapacity: "Compendium.dnd5e.content24.JournalEntry.phbAppendixDRule.JournalEntryPage.1PnjDBKbQJIVyc2t",
   push: "Compendium.dnd5e.content24.JournalEntry.phbAppendixDRule.JournalEntryPage.Hni8DjqLzoqsVjb6",
@@ -5127,7 +5125,7 @@ DND5E.rules = {
 /**
  * @type {TokenRingsConfiguration}
  */
-DND5E.tokenRings = {
+WANDS.tokenRings = {
   effects: {
     RING_PULSE: "DND5E.TokenRings.Effects.RingPulse",
     RING_GRADIENT: "DND5E.TokenRings.Effects.RingGradient",
@@ -5146,7 +5144,7 @@ preLocalize("tokenRings.effects");
  * List of books available as sources.
  * @enum {string}
  */
-DND5E.sourceBooks = {};
+WANDS.sourceBooks = {};
 preLocalize("sourceBooks", { sort: true });
 
 /* -------------------------------------------- */
@@ -5157,9 +5155,9 @@ preLocalize("sourceBooks", { sort: true });
  * Themes that can be set for the system or on sheets.
  * @enum {string}
  */
-DND5E.themes = {
-  light: "SHEETS.DND5E.THEME.Light",
-  dark: "SHEETS.DND5E.THEME.Dark"
+WANDS.themes = {
+  light: "SHEETS.WANDS.THEME.Light",
+  dark: "SHEETS.WANDS.THEME.Dark"
 };
 preLocalize("themes");
 
@@ -5168,17 +5166,17 @@ preLocalize("themes");
 /* -------------------------------------------- */
 
 let _enrichmentLookup;
-Object.defineProperty(DND5E, "enrichmentLookup", {
+Object.defineProperty(WANDS, "enrichmentLookup", {
   get() {
     const slugify = value => value?.slugify().replaceAll("-", "");
     if ( !_enrichmentLookup ) {
       _enrichmentLookup = {
-        abilities: foundry.utils.deepClone(DND5E.abilities),
-        skills: foundry.utils.deepClone(DND5E.skills),
-        spellSchools: foundry.utils.deepClone(DND5E.spellSchools),
-        tools: foundry.utils.deepClone(DND5E.tools)
+        abilities: foundry.utils.deepClone(WANDS.abilities),
+        skills: foundry.utils.deepClone(WANDS.skills),
+        spellSchools: foundry.utils.deepClone(WANDS.spellSchools),
+        tools: foundry.utils.deepClone(WANDS.tools)
       };
-      const addFullKeys = key => Object.entries(DND5E[key]).forEach(([k, v]) =>
+      const addFullKeys = key => Object.entries(WANDS[key]).forEach(([k, v]) =>
         _enrichmentLookup[key][slugify(v.fullKey)] = { ...v, key: k }
       );
       addFullKeys("abilities");
@@ -5195,20 +5193,20 @@ Object.defineProperty(DND5E, "enrichmentLookup", {
 /**
  * Patch an existing config enum to allow conversion from string values to object values without
  * breaking existing modules that are expecting strings.
- * @param {string} key          Key within DND5E that has been replaced with an enum of objects.
+ * @param {string} key          Key within WANDS that has been replaced with an enum of objects.
  * @param {string} fallbackKey  Key within the new config object from which to get the fallback value.
  * @param {object} [options]    Additional options passed through to logCompatibilityWarning.
  */
 function patchConfig(key, fallbackKey, options) {
   /** @override */
   function toString() {
-    const message = `The value of CONFIG.DND5E.${key} has been changed to an object.`
+    const message = `The value of CONFIG.WANDS.${key} has been changed to an object.`
       +` The former value can be acccessed from .${fallbackKey}.`;
     foundry.utils.logCompatibilityWarning(message, options);
     return this[fallbackKey];
   }
 
-  Object.values(DND5E[key]).forEach(o => {
+  Object.values(WANDS[key]).forEach(o => {
     if ( foundry.utils.getType(o) !== "Object" ) return;
     Object.defineProperty(o, "toString", {value: toString});
   });
@@ -5216,4 +5214,4 @@ function patchConfig(key, fallbackKey, options) {
 
 /* -------------------------------------------- */
 
-export default DND5E;
+export default WANDS;
