@@ -1,0 +1,26 @@
+{
+  "name": "Iron Will",
+  "type": "spell",
+  "img": "icons/magic/defensive/shield-barrier-flaming-diamond-purple.webp",
+  "system": {
+    "level": 2,
+    "school": "abj",
+    "actionType": "util",
+    "activation": { "type": "action", "cost": 1 },
+    "target": { "type": "self" },
+    "duration": { "value": 1, "units": "minute" },
+    "concentration": true,
+    "description": { "value": "<p>Steeled nerves. Gain +1 to all saving throws.</p>" }
+  },
+  "effects": [
+    {
+      "label": "Iron Will (+1 Saves)",
+      "icon": "icons/magic/defensive/shield-barrier-flaming-diamond-purple.webp",
+      "transfer": false,
+      "duration": { "seconds": 60 },
+      "changes": [
+        { "key": "system.bonuses.abilities.save", "mode": 2, "value": "1", "priority": 20 }
+      ]
+    }
+  ]
+}

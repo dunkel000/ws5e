@@ -1,0 +1,26 @@
+{
+  "name": "Force Push",
+  "type": "spell",
+  "img": "icons/magic/air/air-pressure-shield-blue.webp",
+  "system": {
+    "level": 1,
+    "school": "evo",
+    "actionType": "save",
+    "activation": { "type": "action", "cost": 1 },
+    "target": { "type": "creature", "value": 1 },
+    "range": { "value": 30, "units": "ft" },
+    "save": { "ability": "str", "dc": 8, "scaling": "spell" },
+    "damage": { "parts": [["1d6", "force"]] },
+    "description": { "value": "<p>On a failed STR save: 1d6 force and <strong>Prone</strong>.</p>" }
+  },
+  "effects": [
+    {
+      "label": "Pushed (Prone)",
+      "icon": "icons/magic/air/air-pressure-shield-blue.webp",
+      "transfer": false,
+      "duration": { "seconds": 6 },
+      "statuses": ["prone"],
+      "changes": []
+    }
+  ]
+}

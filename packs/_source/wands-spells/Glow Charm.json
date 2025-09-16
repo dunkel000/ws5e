@@ -1,0 +1,15 @@
+{
+  "name": "Glow Charm",
+  "type": "spell",
+  "img": "icons/magic/light/hand-sparks-glow-yellow.webp",
+  "system": {
+    "level": 0,
+    "school": "ill",
+    "actionType": "util",
+    "activation": { "type": "action", "cost": 1 },
+    "target": { "type": "object" },
+    "duration": { "value": 1, "units": "hour" },
+    "description": { "value": "<p>Object sheds bright light (20 ft) and dim (20 ft). GM may apply token light.</p>" }
+  },
+  "effects": []
+}
