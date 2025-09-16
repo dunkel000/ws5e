@@ -1,0 +1,26 @@
+{
+  "name": "Stoneflesh",
+  "type": "spell",
+  "img": "icons/magic/earth/barrier-stone-brown.webp",
+  "system": {
+    "level": 2,
+    "school": "abj",
+    "actionType": "util",
+    "activation": { "type": "action", "cost": 1 },
+    "target": { "type": "self" },
+    "duration": { "value": 10, "units": "minute" },
+    "concentration": true,
+    "description": { "value": "<p>Your skin hardens like stone. Gain +1 AC while concentrating.</p>" }
+  },
+  "effects": [
+    {
+      "label": "Stoneflesh (+1 AC)",
+      "icon": "icons/magic/earth/barrier-stone-brown.webp",
+      "transfer": false,
+      "duration": { "seconds": 600 },
+      "changes": [
+        { "key": "system.attributes.ac.bonus", "mode": 2, "value": "1", "priority": 20 }
+      ]
+    }
+  ]
+}

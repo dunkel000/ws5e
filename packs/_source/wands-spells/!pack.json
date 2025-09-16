@@ -1,0 +1,9 @@
+{
+  "label": "W&S Spells",
+  "name": "wands-spells",
+  "path": "packs/wands-spells",
+  "type": "Item",
+  "system": "wands",
+  "package": "wands",
+  "private": false
+}

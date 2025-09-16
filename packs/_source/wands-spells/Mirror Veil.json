@@ -1,0 +1,26 @@
+{
+  "name": "Mirror Veil",
+  "type": "spell",
+  "img": "icons/magic/defensive/illusion-evasion-echo-purple.webp",
+  "system": {
+    "level": 2,
+    "school": "ill",
+    "actionType": "util",
+    "activation": { "type": "action", "cost": 1 },
+    "target": { "type": "self" },
+    "duration": { "value": 1, "units": "minute" },
+    "concentration": true,
+    "description": { "value": "<p>Shimmering afterimages impose +1 AC.</p>" }
+  },
+  "effects": [
+    {
+      "label": "Mirror Veil (+1 AC)",
+      "icon": "icons/magic/defensive/illusion-evasion-echo-purple.webp",
+      "transfer": false,
+      "duration": { "seconds": 60 },
+      "changes": [
+        { "key": "system.attributes.ac.bonus", "mode": 2, "value": "1", "priority": 20 }
+      ]
+    }
+  ]
+}

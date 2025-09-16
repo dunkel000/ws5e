@@ -1,0 +1,15 @@
+{
+  "name": "Feather Float",
+  "type": "spell",
+  "img": "icons/magic/air/air-feather-fall-blue.webp",
+  "system": {
+    "level": 1,
+    "school": "trs",
+    "actionType": "util",
+    "activation": { "type": "reaction", "cost": 1 },
+    "target": { "type": "creature", "value": 1 },
+    "range": { "value": 60, "units": "ft" },
+    "description": { "value": "<p>Reduce fall to 60 ft/round, no fall damage this round.</p>" }
+  },
+  "effects": []
+}

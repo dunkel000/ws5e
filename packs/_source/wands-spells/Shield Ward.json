@@ -1,0 +1,25 @@
+{
+  "name": "Shield Ward",
+  "type": "spell",
+  "img": "icons/magic/defensive/shield-barrier-glowing-triangle.webp",
+  "system": {
+    "level": 1,
+    "school": "abj",
+    "actionType": "util",
+    "activation": { "type": "reaction", "cost": 1 },
+    "target": { "type": "self" },
+    "duration": { "value": 1, "units": "round" },
+    "description": { "value": "<p>Momentary ward. Gain +2 AC until start of your next turn.</p>" }
+  },
+  "effects": [
+    {
+      "label": "+2 AC Ward",
+      "icon": "icons/magic/defensive/shield-barrier-glowing-triangle.webp",
+      "transfer": false,
+      "duration": { "seconds": 6 },
+      "changes": [
+        { "key": "system.attributes.ac.bonus", "mode": 2, "value": "2", "priority": 20 }
+      ]
+    }
+  ]
+}

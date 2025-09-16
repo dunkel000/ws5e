@@ -1,0 +1,15 @@
+{
+  "name": "Counter-Charm",
+  "type": "spell",
+  "img": "icons/magic/defensive/deflect-energy-shield-white.webp",
+  "system": {
+    "level": 3,
+    "school": "abj",
+    "actionType": "util",
+    "activation": { "type": "reaction", "cost": 1 },
+    "target": { "type": "creature", "value": 1 },
+    "range": { "value": 60, "units": "ft" },
+    "description": { "value": "<p>Interrupts a spell you can see within 60 ft. GM adjudicates DC vs spell level/year.</p>" }
+  },
+  "effects": []
+}

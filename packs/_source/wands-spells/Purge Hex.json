@@ -1,0 +1,14 @@
+{
+  "name": "Purge Hex",
+  "type": "spell",
+  "img": "icons/magic/holy/prayer-hands-glowing-yellow.webp",
+  "system": {
+    "level": 3,
+    "school": "abj",
+    "actionType": "util",
+    "activation": { "type": "action", "cost": 1 },
+    "target": { "type": "creature", "value": 1 },
+    "description": { "value": "<p>Ends one effect of Year ≤ 3 on the target (GM adjudication).</p>" }
+  },
+  "effects": []
+}

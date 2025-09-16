@@ -1,0 +1,27 @@
+{
+  "name": "Bind Hex",
+  "type": "spell",
+  "img": "icons/magic/control/hand-grip-earth-green.webp",
+  "system": {
+    "level": 1,
+    "school": "enc",
+    "actionType": "save",
+    "activation": { "type": "action", "cost": 1 },
+    "target": { "type": "creature", "value": 1 },
+    "range": { "value": 30, "units": "ft" },
+    "save": { "ability": "str", "dc": 8, "scaling": "spell" },
+    "duration": { "value": 1, "units": "minute" },
+    "concentration": true,
+    "description": { "value": "<p>Shadowy cords seize the target. On a failed STR save, the target is <strong>Restrained</strong> (save ends at end of each turn).</p>" }
+  },
+  "effects": [
+    {
+      "label": "Restrained",
+      "icon": "icons/magic/control/hand-grip-earth-green.webp",
+      "transfer": false,
+      "duration": { "seconds": 60 },
+      "statuses": ["restrained"],
+      "changes": []
+    }
+  ]
+}

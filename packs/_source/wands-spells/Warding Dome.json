@@ -1,0 +1,26 @@
+{
+  "name": "Warding Dome",
+  "type": "spell",
+  "img": "icons/magic/defensive/shield-barrier-hexagon-pink.webp",
+  "system": {
+    "level": 2,
+    "school": "abj",
+    "actionType": "util",
+    "activation": { "type": "action", "cost": 1 },
+    "target": { "type": "self" },
+    "duration": { "value": 1, "units": "minute" },
+    "concentration": true,
+    "description": { "value": "<p>Gain 5 temporary HP while the dome persists.</p>" }
+  },
+  "effects": [
+    {
+      "label": "Warding Dome (temp 5)",
+      "icon": "icons/magic/defensive/shield-barrier-hexagon-pink.webp",
+      "transfer": false,
+      "duration": { "seconds": 60 },
+      "changes": [
+        { "key": "system.attributes.hp.temp", "mode": 2, "value": "5", "priority": 20 }
+      ]
+    }
+  ]
+}
