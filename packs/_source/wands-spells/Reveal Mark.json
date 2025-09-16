@@ -1,0 +1,28 @@
+{
+  "name": "Reveal Mark",
+  "type": "spell",
+  "img": "icons/magic/perception/third-eye-blue-red.webp",
+  "system": {
+    "level": 1,
+    "school": "div",
+    "actionType": "save",
+    "activation": { "type": "action", "cost": 1 },
+    "target": { "type": "creature", "value": 1 },
+    "range": { "value": 60, "units": "ft" },
+    "save": { "ability": "dex", "dc": 8, "scaling": "spell" },
+    "duration": { "value": 1, "units": "minute" },
+    "concentration": true,
+    "description": { "value": "<p>Outlined by shimmering motes. Attacks vs target have +1.</p>" }
+  },
+  "effects": [
+    {
+      "label": "Revealed (+1 to be hit)",
+      "icon": "icons/magic/perception/third-eye-blue-red.webp",
+      "transfer": false,
+      "duration": { "seconds": 60 },
+      "changes": [
+        { "key": "system.bonuses.all.attackReceived", "mode": 2, "value": "1", "priority": 20 }
+      ]
+    }
+  ]
+}

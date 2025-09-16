@@ -1,0 +1,26 @@
+{
+  "name": "Burning Arc",
+  "type": "spell",
+  "img": "icons/magic/fire/flame-spiral-orange.webp",
+  "system": {
+    "level": 2,
+    "school": "evo",
+    "actionType": "save",
+    "activation": { "type": "action", "cost": 1 },
+    "target": { "type": "creature", "value": 1 },
+    "range": { "value": 60, "units": "ft" },
+    "save": { "ability": "dex", "dc": 8, "scaling": "spell" },
+    "damage": { "parts": [["2d6", "fire"]] },
+    "description": { "value": "<p>Arcing flame. On fail: damage and <strong>Frightened</strong> 1 round.</p>" }
+  },
+  "effects": [
+    {
+      "label": "Scorched (Frightened)",
+      "icon": "icons/magic/fire/flame-spiral-orange.webp",
+      "transfer": false,
+      "duration": { "seconds": 6 },
+      "statuses": ["frightened"],
+      "changes": []
+    }
+  ]
+}

@@ -624,7 +624,7 @@
   ],
   "packFolders": [
     {
-      "name": "D&D Modern Content",
+      "name": "W&S Modern Content",
       "color": "#cd2c1e",
       "sorting": "m",
       "packs": [
@@ -640,7 +640,7 @@
       ]
     },
     {
-      "name": "D&D Legacy Content",
+      "name": "W&S Legacy Content",
       "sorting": "m",
       "color": "#cd2c1e",
       "packs": [

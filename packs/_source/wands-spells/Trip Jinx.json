@@ -1,0 +1,24 @@
+{
+  "name": "Trip Jinx",
+  "type": "spell",
+  "img": "icons/magic/control/debuff-energy-hold-blue.webp",
+  "system": {
+    "level": 0,
+    "school": "trs",
+    "actionType": "rsak",
+    "activation": { "type": "action", "cost": 1 },
+    "target": { "type": "creature", "value": 1 },
+    "range": { "value": 30, "units": "ft" },
+    "description": { "value": "<p>A sudden stumble. On hit: target is <strong>Prone</strong> until it stands.</p>" }
+  },
+  "effects": [
+    {
+      "label": "Prone",
+      "icon": "icons/magic/control/debuff-energy-hold-blue.webp",
+      "transfer": false,
+      "duration": { "seconds": 6 },
+      "statuses": ["prone"],
+      "changes": []
+    }
+  ]
+}

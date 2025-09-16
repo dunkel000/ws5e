@@ -1,0 +1,31 @@
+{
+  "name": "Dazzle Charm",
+  "type": "spell",
+  "img": "icons/magic/light/explosion-star-glow.webp",
+  "system": {
+    "level": 0,
+    "school": "ill",
+    "actionType": "save",
+    "activation": { "type": "action", "cost": 1 },
+    "target": { "type": "creature", "value": 1 },
+    "range": { "value": 60, "units": "ft" },
+    "save": { "ability": "wis", "dc": 8, "scaling": "spell" },
+    "damage": { "parts": [] },
+    "components": { "vocal": true, "somatic": true, "material": false },
+    "duration": { "value": 1, "units": "minute" },
+    "concentration": true,
+    "description": { "value": "<p>A flash of illusory light. On a failed save the target is <strong>Blinded</strong> until the end of its next turn.</p>" }
+  },
+  "effects": [
+    {
+      "label": "Dazzle (Blinded)",
+      "icon": "icons/magic/light/explosion-star-glow.webp",
+      "origin": "",
+      "disabled": false,
+      "transfer": false,
+      "duration": { "seconds": 6 },
+      "statuses": ["blinded"],
+      "changes": []
+    }
+  ]
+}

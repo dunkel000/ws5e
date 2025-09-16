@@ -1,0 +1,27 @@
+{
+  "name": "Disarm",
+  "type": "spell",
+  "img": "icons/skills/melee/strike-sword-dagger-blood.webp",
+  "system": {
+    "level": 1,
+    "school": "trs",
+    "actionType": "rsak",
+    "activation": { "type": "action", "cost": 1 },
+    "target": { "type": "creature", "value": 1 },
+    "range": { "value": 60, "units": "ft" },
+    "damage": { "parts": [] },
+    "description": { "value": "<p>A flick dislodges the foe's grip. Apply <strong>Prone</strong> and -1 to attack rolls (as a proxy for disarmed).</p>" }
+  },
+  "effects": [
+    {
+      "label": "Disarmed (Proxy)",
+      "icon": "icons/skills/melee/strike-sword-dagger-blood.webp",
+      "transfer": false,
+      "duration": { "seconds": 6 },
+      "statuses": ["prone"],
+      "changes": [
+        { "key": "system.bonuses.mwak.attack", "mode": 2, "value": "-1", "priority": 20 }
+      ]
+    }
+  ]
+}

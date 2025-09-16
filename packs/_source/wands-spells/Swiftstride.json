@@ -1,0 +1,26 @@
+{
+  "name": "Swiftstride",
+  "type": "spell",
+  "img": "icons/magic/movement/portal-vortex-orange.webp",
+  "system": {
+    "level": 1,
+    "school": "trs",
+    "actionType": "util",
+    "activation": { "type": "bonus", "cost": 1 },
+    "target": { "type": "self" },
+    "duration": { "value": 1, "units": "minute" },
+    "concentration": true,
+    "description": { "value": "<p>Your steps blur. Increase walking speed by 10 ft.</p>" }
+  },
+  "effects": [
+    {
+      "label": "Swiftstride (+10 ft)",
+      "icon": "icons/magic/movement/portal-vortex-orange.webp",
+      "transfer": false,
+      "duration": { "seconds": 60 },
+      "changes": [
+        { "key": "system.attributes.movement.walk", "mode": 2, "value": "+10", "priority": 20 }
+      ]
+    }
+  ]
+}

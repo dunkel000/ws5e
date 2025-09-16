@@ -1,0 +1,27 @@
+{
+  "name": "Levitation",
+  "type": "spell",
+  "img": "icons/magic/air/air-burst-spiral-pink.webp",
+  "system": {
+    "level": 2,
+    "school": "trs",
+    "actionType": "save",
+    "activation": { "type": "action", "cost": 1 },
+    "target": { "type": "creature", "value": 1 },
+    "range": { "value": 60, "units": "ft" },
+    "save": { "ability": "con", "dc": 8, "scaling": "spell" },
+    "duration": { "value": 1, "units": "minute" },
+    "concentration": true,
+    "description": { "value": "<p>Target floats helplessly if it fails a CON save: <strong>Restrained</strong> and lifted.</p>" }
+  },
+  "effects": [
+    {
+      "label": "Levitation (Restrained)",
+      "icon": "icons/magic/air/air-burst-spiral-pink.webp",
+      "transfer": false,
+      "duration": { "seconds": 60 },
+      "statuses": ["restrained"],
+      "changes": []
+    }
+  ]
+}
